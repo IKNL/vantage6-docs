@@ -11,11 +11,11 @@ description: >-
 * Do you want to host a VANTAGE6 server? Start [here](setup/install-vantage6.md)!
 
 {% hint style="info" %}
-\*\*\*\*⛑ **Need Support?**  
+⛑**Need Support?**  
 Please join us on our [Discord channel](https://discord.gg/yAyFf6Y)!
 
-👩💻 **Found a Bug?**  
-Please report it at our ****[**github**](https://github.com/iknl/vantage6) ****page! ****
+ 👩💻 **Found a Bug?**  
+Please report it at our [Github page](https://github.com/iknl/vantage6)!
 {% endhint %}
 
 ## ⛩ Introduction
