@@ -1,7 +1,7 @@
 ---
 description: >-
   You'll find comprehensive guides and documentation to help you start working
-  with Vantage as quickly as possible, as well as support if you get stuck.
+  with Vantage as quickly as possible, as well as support if you get stuck. Test
 ---
 
 # Welcome!
