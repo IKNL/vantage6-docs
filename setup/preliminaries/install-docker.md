@@ -71,11 +71,11 @@ docker run hello-world
 
 The easiest way to install Docker on Windows is installing Docker desktop, see these [instructions](https://docs.docker.com/docker-for-windows/install/). Make sure you select **Linux Containers** during the installation process. After installing the Docker engine needs access to the dataset location. Right click on the Docker icon and select settings:
 
-![Find your way to the settings.](../../.gitbook/assets/image.png)
+![Find your way to the settings.](../../.gitbook/assets/image%20%281%29.png)
 
 Then go to Shared Drives and make sure the drive where the data is located is checked and press Apply.
 
-![Make sure the drive where the data is located is shared with the Docker engine.](../../.gitbook/assets/image%20%281%29.png)
+![Make sure the drive where the data is located is shared with the Docker engine.](../../.gitbook/assets/image.png)
 
 {% tabs %}
 {% tab title="PowerShell" %}

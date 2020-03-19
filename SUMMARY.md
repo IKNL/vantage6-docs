@@ -2,6 +2,7 @@
 
 * [Welcome!](README.md)
 * [How to Contribute](how-to-contribute.md)
+* [Glossary](glossary.md)
 
 ## Release Notes <a id="release-notes-1"></a>
 
