@@ -6,7 +6,7 @@ description: >-
 
 # Glossary
 
-Currently, we are working in a paper where most of these concepts are explained in a more cohesive, well-structured manner, together with how VANTAGE6 works. As soon as it is ready, we will post in our website.
+📝 Currently, we are working in a paper where most of these concepts are explained in a more cohesive, well-structured manner, together with how VANTAGE6 works. As soon as it is ready, we will post it in our website.
 
 **A**
 
@@ -49,7 +49,7 @@ Currently, we are working in a paper where most of these concepts are explained 
 **V**
 
 * **VANTAGE6**: priVAcy preserviNg federaTed leArninG infrastructurE for Secure Insight eXchange. In short, VANTAGE6 is an infrastructure for executing federated learning analyses. However, it can also be used as a FAIR data station and as a model repository.
-* **Vertically-partitioned data**: data spread across different parties where the latter have different features of the same instances \(i.e., patients\). See also vertically-partitioned data.
+* **Vertically-partitioned data**: data spread across different parties where the latter have different features of the same instances \(i.e., patients\). See also horizontally-partitioned data.
 
 ![](.gitbook/assets/vertical.png)
 
