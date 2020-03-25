@@ -7,10 +7,6 @@ description: >-
 
 # Node
 
-{% hint style="danger" %}
-At this moment the docker image which contains the node needs to be pulled manually: `docker pull harbor.distributedlearning.ai/infrastructure/node`
-{% endhint %}
-
 It is assumed that Docker, and the VANTAGE6 Python package have been successfully installed. If not, have a look at previous steps described in [Installation of Docker](../preliminaries/install-docker.md) and [Install Vantage](../install-vantage6.md).
 
 {% hint style="info" %}
