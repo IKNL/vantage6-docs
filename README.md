@@ -10,9 +10,7 @@ description: >-
 
 On this site, you'll find comprehensive guides and documentation to help you start working with **vantage6** as quickly as possible, as well as support if you get stuck.
 
-* Are you are researcher? Start [here](usage/your-first-computation-task.md)!
-* Are you a data-provider? Start [here]()!
-* Do you want to host a Vantage server? Start [here]()!
+For an introduction to federated learning, have a look at the \(aptly named\) [Introduction](about-privacy-preserving-federated-learning/introduction.md)!
 
 {% hint style="info" %}
 \*\*\*\*⛑ **Need Support?**  
@@ -22,7 +20,5 @@ Please join us on our [Discord channel](https://discord.gg/yAyFf6Y)!
 Please report it at our ****[**github**](https://github.com/iknl/vantage6) ****page! ****
 {% endhint %}
 
-## 
-
-## 🛤 
+ 
 

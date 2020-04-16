@@ -25,6 +25,7 @@
 * [Running the Node](usage/running-the-node/README.md)
   * [Configuration](usage/running-the-node/configuration.md)
   * [Docker-only Install](usage/running-the-node/docker-only-install.md)
+* [Running analyses](usage/running-analyses.md)
 * [Create Computation Task](usage/your-first-computation-task.md)
 * [How to Contribute](how-to-contribute.md)
 
@@ -34,6 +35,6 @@
 
 ## Algorithm Development
 
-* [Create a New Algorithm](algorithm-development/create-new-algorithm.md)
+* [Creating a New Algorithm](algorithm-development/create-new-algorithm.md)
 * [Creating a New \(Complex\) Algorithm](algorithm-development/creating-a-new-complex-algorithm.md)
 

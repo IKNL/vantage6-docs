@@ -4,11 +4,11 @@ description: >-
   partitioned data are explained.
 ---
 
-# Create a New Algorithm
+# Creating a New Algorithm
 
 It is assumed that the algorithm that you want to use is mathematically possible for a separated dataset. In the following sections we use a simple average algorithm to explain the different steps to create an algorithm for Vantage. The following steps should be taken to create a Vantage ready algorithm:
 
-1. Mathematically split the model
+1. Mathematically decompose the model
 2. Implement and test locally using your preferred language
 3. Standardize I/O
 4. Dockerize and push to a registry 

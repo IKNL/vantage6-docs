@@ -12,14 +12,14 @@ The general idea behind federated learning is that sites share a \(statistical\)
 
 ### How is this possible?
 
-Whether it's possible to apply federated learning, depends on the analysis in question. For example, it has been proven that it's possible to mathematically decompose the algorithm to compute the Cox Proportional Hazards model so that each site computes and shares aggregate statistics \([Lu et al., “WebDISCO”](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5009917/)\). Other algorithms known to work, are Linear Regression, Logistics Regression, Bayesian Networks and Neural Networks.
+Whether it's possible to apply federated learning, depends on the analysis in question. For example, it has been proven that it's possible to mathematically decompose the algorithm to compute the \(parameters for the\) Cox Proportional Hazards model by having each site compute and share only aggregate statistics \([Lu et al., “WebDISCO”](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5009917/)\). Other algorithms known to work, are Linear Regression, Logistic Regression, Bayesian Networks and Neural Networks.
 
 To get some intuition into how this works, consider the following example. Say we have a collaboration between two hospitals and we would like to compute the average weight of patients in the ICU. To achieve this, we don't need to have all data in a single database. Instead, we can ask each site to return ...
 
 1. the number of patients they admitted; and
 2. their average weight.
 
-Combining the data from the two sites will allow us to compute the total number of patients and the global average.
+Combining the data from the two sites will allow us to compute the total number of patients and the global average. See [Creating a New Algorithm](../algorithm-development/create-new-algorithm.md#the-mathematical-problem) for a worked out example.
 
 ### Data partitioning - horizontal and vertical
 
