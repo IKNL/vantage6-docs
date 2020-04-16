@@ -26,7 +26,7 @@
   * [Configuration](usage/running-the-node/configuration.md)
   * [Docker-only Install](usage/running-the-node/docker-only-install.md)
 * [Running analyses](usage/running-analyses.md)
-* [Create Computation Task](usage/your-first-computation-task.md)
+* [Using the API](usage/your-first-computation-task.md)
 * [How to Contribute](how-to-contribute.md)
 
 ## Release Notes <a id="release-notes-1"></a>
