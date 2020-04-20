@@ -27,8 +27,8 @@ organizations:
     zipcode:    3511DT
     country:    Netherlands
     users:
-      - username: root
-        firstname: root
+      - username: admin
+        firstname: admin
         lastname: robot
         password: password
         roles: "root"
