@@ -22,7 +22,7 @@ description: Currently in alpha
   * In case no private key is specified, the node generates a new key an uploads the public key to the server. 
   * If a node starts \(using `vnode start`\), it always checks if the `public_key` on the server matches the private key the node is currently using.
   * In case your organization has multiple nodes running they should all point to the same private key.
-  * Users have to encrypt the input and decrypt the output, which can be simplified by using our client packages _VANTAGE6-pyClient_ for python __or _VANTAGE6-RClient_ for R \(both currently in development\).
+  * Users have to encrypt the input and decrypt the output, which can be simplified by using our client `vantage6.client.Client` __for Python __or `vtg::Client` __for R.
   * Algorithms are not concerned about encryption as this is handled at node level.
 * **Algorithm container isolation**
   * Containers have no longer an internet connection, but are connected to a private docker network.
