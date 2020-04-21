@@ -106,7 +106,9 @@ The algorithm receives parameter input in a txt-file, and also writes the output
 
 #### /app/input.txt
 
-The recommended format \(to keep maximum flexibility\) is a JSON file containing three keys: `method`, `args` and `kwargs` in which the `method` is the method name and the `args` and `kwargs` the input for this method in python-style. In case of the node algorithm in python:
+The recommended format \(to keep maximum flexibility\) is a JSON file containing three keys: `method`, `args` and `kwargs` in which the `method` is the method name and the `args` and `kwargs` are the input for this method in python-style. 
+
+In the case of the node algorithm in python:
 
 ```yaml
 {
