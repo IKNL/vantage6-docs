@@ -65,7 +65,7 @@ setup.client <- function() {
   username <- "username@example.com"
   password <- "password"
   
-  host <- 'https://api.vantage6.ai'
+  host <- 'https://trolltunga.vantage6.ai'
   api_path <- ''
   
   # Create the client & authenticate
