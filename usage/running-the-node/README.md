@@ -28,22 +28,20 @@ In the previous section we used the`vnode` command several times. All sub-comman
 | `vnode files` | List file locations of the node instance |
 | `vnode start` | Start a node configuration |
 | `vnode attach` | Attach the outl |
+| `create-private-key` | Creates and uploads a new public key
 
 ## 🆕 \(Re-\)Configuring a Node
 
-Nodes are created from a configuration file. This file can be created through command `vnode new`or creating a YAML file manually. See [this ](../running-the-server/server-configuration.md)section on how to do this. 
+Nodes are created from a configuration file. This file can be created through command `vnode new`or creating a YAML file manually. See [this ](../running-the-server/server-configuration.md)section on how to do this.
 
 ##  🏎 Starting the Node
 
 Once a configuration is created you can start this instance by using `vnode start` and select the configuration you wish to start. Or in the case you already know the name of the configuration you can use `vnode start --name [config_name]` . It is also possible to use a configuration file that is in a non-default location by using `vnode start --config /path/to/config` . All other options will be overwritten when using this option.
 
 {% hint style="warning" %}
-Node configurations are assumed to be in the user-folder. However if you have a configuration stored in the system-folder you should add the flag system: `vnode start --system` .  
+Node configurations are assumed to be in the user-folder. However if you have a configuration stored in the system-folder you should add the flag system: `vnode start --system` .
 {% endhint %}
 
 ## ✍ Logging
 
-The easiest way to read the logs from a node is using `vnode attach` and select the node from which you want to read the logs from. 
-
-
-
+The easiest way to read the logs from a node is using `vnode attach` and select the node from which you want to read the logs from.

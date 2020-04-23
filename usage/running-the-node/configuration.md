@@ -2,7 +2,7 @@
 
 ## 🧙 Configure using the Wizard
 
-The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings. 
+The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings.
 
 ![Configure a new node using the wizard.](../../.gitbook/assets/node-configuration.png)
 
@@ -38,7 +38,7 @@ application:
   api_path: '/api'
   task_dir: tasks
   encryption:
-    disabled: false 
+    enabled: true
     private_key: /path/to/private_key.pem
   databases:
     default: /path/to/database.csv
@@ -53,3 +53,10 @@ application:
       datefmt:      "%H:%M:%S"
 ```
 
+## 🔒 Encryption
+
+Both the server and node need to agree if encryption is used or not. Encryption at the server is managed at collaboration level, i.e. each collaboration determines whenever encryption of all communication is used or not. You can enable or disable encryption in the configuration file by setting the `enabled` key in the encryption section. To generate a new private key and upload the public key to the server you can use the command `vnode create-private-key`.
+
+{% hint style="warn" %}
+Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible (yet) to create an unique private key for each node you own.
+{% endhint %}
