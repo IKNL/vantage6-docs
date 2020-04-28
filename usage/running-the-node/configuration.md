@@ -4,7 +4,7 @@
 
 The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings.
 
-![Configure a new node using the wizard.](../../.gitbook/assets/node-configuration.png)
+![Example of running &quot;vnode new&quot;](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
 
 By default the node configuration file is stored at user level, which isolates this configuration from other users. In case you want this configuration to be available for all users, simply add the `--system` flag \(make sure you have sufficient rights to do this\).
 
@@ -19,8 +19,8 @@ The configuration wizard outputs a YAML file which can be loaded into VANTAGE6. 
 | Operating System | System-folder | User-folder |
 | :--- | :--- | :--- |
 | Windows | C:\ProgramData\vantage\node | C:\Users\&lt;user&gt;\AppData\Local\vantage\node |
-| MacOS |  |  |
-| Linux |  | /home/&lt;user&gt;/.config/vantage/node/ |
+| MacOS | /Library/Application Support/vantage6/node | /Users/&lt;user&gt;/Library/Application Support/vantage6/node |
+| Linux | /etc/vantage/node | /home/&lt;user&gt;/.config/vantage/node |
 
 {% hint style="info" %}
 To start a node using a configuration file at an arbitrary location you should use the config option:`vnode start --config /path/to/config.yaml` note that this will overwrite all other options.
