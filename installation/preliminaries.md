@@ -33,5 +33,7 @@ docker run hello-world
 
 If this command is not succesful, please see [docker.com](https://www.docker.com/get-started) for installation instructions specific for your platform.
 
-## 
+{% hint style="warning" %}
+When using Windows, make sure you [share ](https://docs.docker.com/docker-for-windows/)you're drives with Docker.
+{% endhint %}
 
