@@ -61,7 +61,18 @@ application:
 
 ## 🔒 Encryption
 
-Both the server and node need to agree if encryption is used or not. Encryption at the server is managed at collaboration level, i.e. each collaboration determines whenever encryption of all communication is used or not. You can enable or disable encryption in the configuration file by setting the `enabled` key in the encryption section. To generate a new private key and upload the public key to the server you can use the command `vnode create-private-key`.
+Both the server and node need to agree if encryption is used or not. Encryption at the server is managed at collaboration level, i.e. each collaboration determines whenever encryption of all communication is used or not. You can enable or disable encryption in the configuration file by setting the `enabled` key in the encryption section.
+
+```yaml
+application:
+  ...
+  encryption:
+    enabled: true
+    private_key: /path/to/private_key.pem
+  ...
+```
+
+To generate a new private key and upload the public key to the server you can use the command `vnode create-private-key`. You can also generate the key yourself and upload it by using the `/organization/<id>` endpoint.
 
 {% hint style="info" %}
 Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible \(yet\) to create an unique private key for each node you own.
