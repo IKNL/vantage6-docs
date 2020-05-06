@@ -40,6 +40,12 @@ application:
   encryption:
     enabled: true
     private_key: /path/to/private_key.pem
+  docker_registries:
+    - registry: harbor.vantage6.ai
+      username: docker-registry-user
+      password: your-password!
+  allowed_images:
+    - ^harbor.vantage6.ai/[a-zA-Z]+/[a-zA-Z]+
   databases:
     default: /path/to/database.csv
     alternative: /path/to/other/database.csv
@@ -61,3 +67,25 @@ Both the server and node need to agree if encryption is used or not. Encryption 
 Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible \(yet\) to create an unique private key for each node you own.
 {% endhint %}
 
+## 🏳 Allowed Images
+To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid (regular expression)[https://en.wikipedia.org/wiki/Regular_expression].
+
+```yaml
+application:
+  ...
+  allowed_images:
+    - ^harbor.vantage6.ai/[a-zA-Z]+/[a-zA-Z]+
+  ...
+```
+
+## 🐳 Docker Login
+If you are using a private docker repository the environment in which the node needs to be logged in to that repository. In case the Dockerized version of vantage6 is used you need to specify this in the configuration file using the `docker_registries` key.
+```yaml
+application:
+  ...
+  docker_registries:
+    - registry: harbor.vantage6.ai
+      username: docker-registry-user
+      password: your-password!
+  ...
+```
