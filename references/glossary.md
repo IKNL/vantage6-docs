@@ -31,7 +31,7 @@ description: >-
 * **Heterogeneity:** the condition in which in a federated learning scenario, parties are allowed to have differences in hardware and software \(i.e., operating systems\).
 * **Horizontally-partitioned data**: data spread across different parties where the latter have the same features of different instances \(i.e., patients\). See also vertically-partitioned data.
 
-![](.gitbook/assets/horizontal.PNG)
+![](../.gitbook/assets/horizontal.PNG)
 
 **M**
 
@@ -51,4 +51,4 @@ description: >-
 * **VANTAGE6**: priVAcy preserviNg federaTed leArninG infrastructurE for Secure Insight eXchange. In short, VANTAGE6 is an infrastructure for executing federated learning analyses. However, it can also be used as a FAIR data station and as a model repository.
 * **Vertically-partitioned data**: data spread across different parties where the latter have different features of the same instances \(i.e., patients\). See also horizontally-partitioned data.
 
-![](.gitbook/assets/vertical.png)
+![](../.gitbook/assets/vertical.png)
