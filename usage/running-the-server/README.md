@@ -53,17 +53,17 @@ If logging to the console is enabled, starting the server or loading the fixture
 
 ```bash
 ################################################################################
-#                                pytaskmanager                                 #
+#                              vantage6                                        #
 ################################################################################
-Started application 'vantage' with environment 'test'
+Started application 'vantage6' with environment 'test'
 Current working directory is '/home/test-user'
-Succesfully loaded configuration from '/home/test-user/.config/vantage/server/default.yaml'
-Logging to '/home/test-user/.cache/vantage/log/server/default.log'
+Succesfully loaded configuration from '/home/test-user/.config/vantage6/server/default.yaml'
+Logging to '/home/test-user/.cache/vantage6/log/server/default.log'
 Initializing the database
   driver:   sqlite
   host:     None
   port:     None
-  database: /home/test-user/.local/share/vantage/server/default/test.sqlite
+  database: /home/test-user/.local/share/vantage6/server/default/test.sqlite
   username: None
 Database initialized!
 ```
