@@ -79,7 +79,8 @@ Note that public keys are managed at organization level, meaning that you only c
 {% endhint %}
 
 ## 🏳 Allowed Images
-To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid (regular expression)[https://en.wikipedia.org/wiki/Regular_expression].
+
+To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid \(regular expression\)\[[https://en.wikipedia.org/wiki/Regular\_expression](https://en.wikipedia.org/wiki/Regular_expression)\].
 
 ```yaml
 application:
@@ -90,7 +91,9 @@ application:
 ```
 
 ## 🐳 Docker Login
+
 If you are using a private docker repository the environment in which the node needs to be logged in to that repository. In case the Dockerized version of vantage6 is used you need to specify this in the configuration file using the `docker_registries` key.
+
 ```yaml
 application:
   ...
@@ -100,3 +103,4 @@ application:
       password: your-password!
   ...
 ```
+
