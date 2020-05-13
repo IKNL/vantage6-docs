@@ -40,5 +40,4 @@
 
 ## References
 
-* [Glos](references/untitled.md)
-
+* [Glossary](references/glossary.md)
