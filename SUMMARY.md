@@ -7,6 +7,7 @@
 * [Introduction](about-privacy-preserving-federated-learning/introduction.md)
 * [The infrastructure](about-privacy-preserving-federated-learning/the-infrastructure.md)
 * [General requirements](about-privacy-preserving-federated-learning/requirements.md)
+* [How to Contribute](about-privacy-preserving-federated-learning/how-to-contribute.md)
 
 ## Installation
 
@@ -27,7 +28,6 @@
   * [Docker-only Install](usage/running-the-node/docker-only-install.md)
 * [Running analyses](usage/running-analyses.md)
 * [Using the API](usage/your-first-computation-task.md)
-* [How to Contribute](usage/how-to-contribute.md)
 
 ## Release Notes <a id="release-notes-1"></a>
 
