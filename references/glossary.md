@@ -52,3 +52,4 @@ description: >-
 * **Vertically-partitioned data**: data spread across different parties where the latter have different features of the same instances \(i.e., patients\). See also horizontally-partitioned data.
 
 ![](../.gitbook/assets/vertical.png)
+

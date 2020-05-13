@@ -70,28 +70,3 @@ environments:
     ...
 ```
 
-## ✍ Logging
-
-If logging to the console is enabled, starting the server or loading the fixtures outputs some information that can be helpful in determining the cause of problems. For example, the output below shows:
-
-* Which environment was used
-* What configuration file was used
-* Which database was used
-
-```bash
-################################################################################
-#                                   vantage                                    #
-################################################################################
-Started application vantage with environment prod
-Current working directory is '/root'
-Succesfully loaded configuration from '/etc/xdg/vantage/server/example.yaml'
-Logging to '/usr/local/share/vantage/server/example.log'
-Initializing the database
-  driver:   sqlite
-  host:     None
-  port:     None
-  database: /usr/local/share/vantage/server/example/example.sqlite
-  username: None
-Database initialized!
-```
-
