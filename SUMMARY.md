@@ -7,7 +7,6 @@
 * [Introduction](about-privacy-preserving-federated-learning/introduction.md)
 * [The infrastructure](about-privacy-preserving-federated-learning/the-infrastructure.md)
 * [General requirements](about-privacy-preserving-federated-learning/requirements.md)
-* [How to Contribute](about-privacy-preserving-federated-learning/how-to-contribute.md)
 
 ## Installation
 
@@ -37,6 +36,10 @@
 
 * [Creating a New Algorithm](algorithm-development/create-new-algorithm.md)
 * [Creating a New \(Complex\) Algorithm](algorithm-development/creating-a-new-complex-algorithm.md)
+
+## How to Contribute
+
+* [How to Contribute](how-to-contribute/how-to-contribute.md)
 
 ## References
 
