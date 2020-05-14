@@ -25,7 +25,8 @@
 * [Running the Node](usage/running-the-node/README.md)
   * [Configuration](usage/running-the-node/configuration.md)
   * [Docker-only Install](usage/running-the-node/docker-only-install.md)
-* [Running analyses](usage/running-analyses.md)
+* [Running analyses](usage/running-analyses/README.md)
+  * [Algorithm development status](usage/running-analyses/algorithm-development-status.md)
 * [Using the API](usage/your-first-computation-task.md)
 
 ## Release Notes <a id="release-notes-1"></a>
