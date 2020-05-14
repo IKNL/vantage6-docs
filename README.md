@@ -1,7 +1,8 @@
 ---
 description: >-
-  Vantage6 is an open source framework for privacy preserving, federated
-  learning. It embraces the concepts laid out by the Personal Health Train.
+  vantage6 is an open source priVAcy preserviNg federaTed leArninG
+  infrastructurE for Secure Insight eXchange. It serves as a backbone of the
+  Personal Health Train, embracing its core concepts.
 ---
 
 # Welcome to the vantage6 docs!
@@ -11,6 +12,8 @@ description: >-
 On this site, you'll find comprehensive guides and documentation to help you start working with **vantage6** as quickly as possible, as well as support if you get stuck.
 
 For an introduction to federated learning, have a look at the \(aptly named\) [Introduction](about-privacy-preserving-federated-learning/introduction.md)!
+
+If you are ready for the action, take a look at the [installation instructions](installation/preliminaries.md).
 
 {% hint style="info" %}
 \*\*\*\*⛑ **Need Support?**  

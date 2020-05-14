@@ -4,7 +4,7 @@ description: In this section we'll explain how to deploy a vantage6 server.
 
 # Deployment
 
-**Vantage6** uses Flask as backbone, together with flask-socketio for websocket support. The server runs as a standalone process \(listening on its own ip address/port\), either as a regular process or as a dockerized service. 
+**vantage6** uses Flask as backbone, together with flask-socketio for websocket support. The server runs as a standalone process \(listening on its own ip address/port\), either as a regular process or as a dockerized service. 
 
 While this is fine for development, when hosting a server, this can become bothersome. For example, a webserver might already running on the same port. Therefore, we recommend running the **vantage6** server behind NGINX, a webserver that can also proxy requests and websocket connections.
 

@@ -1,8 +1,18 @@
+---
+description: In this section you will learn how to configure and run the node(s).
+---
+
 # Configuration
+
+## Options
+
+Configuration of the server can be done either through the command line or by creating a custom YAML configuration file. Both options will be detailed below.
 
 ## 🧙 Configure using the Wizard
 
 The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings.
+
+![Configuring a new node using the wizard](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
 
 ![Example of running &quot;vnode new&quot;](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
 

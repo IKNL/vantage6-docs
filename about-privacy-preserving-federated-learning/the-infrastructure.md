@@ -1,17 +1,15 @@
----
-description: A brief overview of the vantage6 infrastructure.
----
-
 # The infrastructure
+
+📝 _Currently, we are working in a paper where most of these concepts are explained in a more cohesive, well-structured manner, together with how vantage6 works. As soon as it is ready, we will post it in our website._
 
 Collaboration through federated learning requires an infrastructure. The open source solution [**vantage6**](https://github.com/IKNL/vantage6) provides this infrastructure. Conceptually, it consists of the following parts:
 
-1. A **central server** that coordinates communication with the nodes;
-2. One or more **nodes** \(aka "sites"\) that execute algorithms;
-3. **Organisations** that are interested in collaborating with each other;
-4. **Collaborations** between organisations;
-5. **Users** \(i.e. researchers\) that instruct the nodes which algorithms to execute and which parameters to use;
-6. A \(docker\) **registry** that functions as a database of algorithms.
+1. A **central server** that coordinates communication with the nodes
+2. One or more **nodes** \(aka "sites"\) that execute algorithms
+3. **Organisations** that are interested in collaborating with each other
+4. **Collaborations** between organisations
+5. **Users** \(i.e., researchers\) that instruct the nodes which algorithms to execute and which parameters to use
+6. A \(docker\) **registry** that functions as a database of algorithms
 
 ![Simplified overview of the infrastructure](../.gitbook/assets/system-overview.png)
 

@@ -16,19 +16,17 @@ Configuration of the server can be done either through the command line or by cr
 Make sure that the database URI is understood by SQLAlchemy. See [here](https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls) for more information.
 {% endhint %}
 
-### 🧙♂ Configure Using the Wizard 
+### 🧙♂ Configuration Using the Wizard 
 
-The most straight forward way of creating a new server configuration is using the command `vantage6 server new` in python which allows you to configure the most basic settings.  See the image below to get an overview of what happens.
+The most straight forward way of creating a new server configuration is using the command `vserver new` in Python which allows you to configure the most basic settings.  See the image below to get an overview of what happens.
 
 ![Configuring a new server using the wizard](../../.gitbook/assets/annotation-2019-06-13-112656.png)
 
-By default the configuration-file is stored at system level, which makes this configuration available for _all_ users. In case you want to use a user directory you can add the `--user` flag. 
+By default the `configuration-file` is stored at system level, which makes this configuration available for _all_ users. In case you want to use a user directory you can add the `--user` flag. 
 
-To update a configuration you need to modify the created YAML file. To see where this file is located you can use thevserver files . Do not forget to specify the --system flag in the case of a system-wide configuration.
+To update a configuration you need to modify the created YAML file. To see where this file is located you can use the command `vserver files` . Do not forget to specify the flag `--system` in the case of a system-wide configuration or the flag `--user` in case of a user-level configuration.
 
-To update the configuration you need to modify the previously created YAML file. To see where this file is located you can use the`vserver files` . Do not forget to specify the `--user` flag in case of a user-level configuration.
-
-### 👩🔬 Configure Using a custom YAML file
+### 👩🔬 Configuration Using a Custom YAML File
 
 The configuration wizard outputs a YAML file that can be used by the server. It is also possible to create this YAML file by hand. An example of the structure of this file is shown [below](server-configuration.md#configuration-file-structure). 
 
@@ -36,9 +34,9 @@ While it's technically possible to store the configuration files anywhere on you
 
 | OS | System | User |
 | :--- | :--- | :--- |
-| Windows | C:\ProgramData\vantage\server | C:\Users\&lt;user&gt;\AppData\Local\vantage\server\ |
-| MacOS | /Library/Application Support/vantage/server/ | /Users/&lt;user&gt;/Library/Application Support/vantage/server/ |
-| Ubuntu | /etc/xdg/vantage/server/ | ~/.config/vantage/server/ |
+| Windows | `C:\ProgramData\vantage\server` | `C:\Users\<user>\AppData\Local\vantage\server\` |
+| MacOS | `/Library/Application Support/vantage/server/` | `/Users/<user>/Library/Application Support/vantage/server/` |
+| Ubuntu | `/etc/xdg/vantage/server/` | `~/.config/vantage/server/` |
 
 ### 🗃 Configuration File Structure
 

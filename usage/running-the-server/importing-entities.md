@@ -1,18 +1,16 @@
 ---
-description: 'Batch import many organizations, users, collaborations, etc...'
+description: 'How to import organizations, users, collaborations, etc. in batch.'
 ---
 
 # Importing Entities
 
-There are three ways to get data into the server:
+There are three ways to get data into the server.
 
-1. Through the RESTful API \(you need to have a user first\)
-2. Through the Python API
-3. The `vserver import` FILE command.
+* **Using the`vserver import` command.**
 
-This section will explain how to import multiple entities at once using the third option.
+This is the most straightforward and recommended option. 
 
-The `vserver import` command expects a path to a YAML file containing the entities you want to import. The expected structure of this YAML-file is as follows:
+The `vserver import` command expects a path to a YAML file containing the entities you want to import. The expected structure of such YAML file is as follows:
 
 {% tabs %}
 {% tab title="YAML" %}
@@ -103,11 +101,33 @@ collaborations:
 {% endtab %}
 {% endtabs %}
 
-To add these objects to the database, simply run:
+Then, to add these objects to the database, simply run:
 
 ```text
 vserver import example_fixtures.yaml
 ```
 
-To change or update one of the entities, you should either use the RESTful API or the [Python API](shell.md).
+{% hint style="info" %}
+Make sure to point to the right path of the YAML file.  
+If your path includes spaces \(like in Windows\), make sure to enclose the path in double quotations \(e.g., `"C:\Users\user\Desktop\my directory\example_fixtures.yaml" )`
+{% endhint %}
+
+{% hint style="info" %}
+The import process might take a few seconds.   
+Be patient and be on the lookout for the status in the console
+{% endhint %}
+
+{% hint style="info" %}
+During this process, your OS might ask for authorization for Docker to access your drive.   
+Be sure to grant it.
+{% endhint %}
+
+It is also possible to do so using other two options.
+
+* **Through the RESTful API** Notice that for this, you need to have a user first
+* **Through the** [**Python API**](shell.md)\*\*\*\*
+
+{% hint style="info" %}
+If you wish to change or update one of the entities, you can only do it through either of the APIs
+{% endhint %}
 

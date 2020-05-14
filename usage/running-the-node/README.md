@@ -1,8 +1,5 @@
 ---
-description: >-
-  In this section you will learn how  to configure and run the node. This can be
-  done either through the command line or by creating a YAML configuration file
-  yourself.
+description: In this section we will explain how to configure and manage a node.
 ---
 
 # Running the Node
@@ -17,22 +14,11 @@ At this moment the docker image which contains the node needs to be pulled manua
 An organisation runs a node for each of the collaborations it participates in.
 {% endhint %}
 
-## 💻 Node Commands
+## 🆕 \(Re-\)Configuring a \(New\) Node
 
-In the previous section we used the`vnode` command several times. All sub-commands can be found by simply running `vnode` , which will display the following list:
+After having a server up and running, we need to create and configure the nodes.
 
-| Command | Description |
-| :--- | :--- |
-| `vnode new` | Create a new configuration file |
-| `vnode list` | List all available configurations \(both system/user\) |
-| `vnode files` | List file locations of the node instance |
-| `vnode start` | Start a node configuration |
-| `vnode attach` | Connect the console to the node's `stdout` |
-| `create-private-key` | Creates and uploads a new public key |
-
-## 🆕 \(Re-\)Configuring a Node
-
-Nodes are created from a configuration file. This file can be created through command `vnode new`or creating a YAML file manually. See [this ](../running-the-server/server-configuration.md)section on how to do this.
+Similar to the server, nodes are created from a configuration file. This file can be generated through the command `vnode new`or manually from a YAML file manually, as explained [in this section. ](configuration.md)
 
 ## 🔑 Creating a private key
 
@@ -64,4 +50,19 @@ Node configurations are assumed to be in the user-folder. However if you have a 
 ## ✍ Logging
 
 The easiest way to read the logs from a node is using `vnode attach` and select the node from which you want to read the logs from.
+
+
+
+## 💻Node Commands
+
+As a reference, these are the sub-commands available to manage the node\(s\). These commands can also be found by simply calling `vnode` .
+
+| Command | Description |
+| :--- | :--- |
+| `vnode new` | Create a new configuration file |
+| `vnode list` | List all available configurations \(both system/user\) |
+| `vnode files` | List file locations of the node instance |
+| `vnode start` | Start a node configuration |
+| `vnode attach` | Connect the console to the node's `stdout` |
+| `create-private-key` | Creates and uploads a new public key |
 

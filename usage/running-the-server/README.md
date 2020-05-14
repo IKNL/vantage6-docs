@@ -1,31 +1,22 @@
 ---
 description: >-
   The server manages users, organizations, collaborations, tasks and results. In
-  this section we'll explain how to configure and manage a server.
+  this section we will explain how to configure and manage a server.
 ---
 
 # Running the server
 
-## 💻 Server Commands
+## 🆕 \(Re-\)Configuring a \(New\) Server
 
-The following sub-commands are available to manage the server\(s\). These commands can also be found by simply calling `vserver` .
+After installing the necessary elements, we need to create and configure a server.
 
-| Command | Description |
-| :--- | :--- |
-| `vserver files` | List the file locations of the server instance |
-| `vserver import` | Import server entities as a batch |
-| `vserver list` | List the available server instances |
-| `vserver new` | Create a new server configuration |
-| `vserver shell` | Run a server instance python shell |
-| `vserver start` | Start a server configuration |
-
-## 🆕 \(Re-\)Configuring a Server
-
-Servers are created from a configuration file. This file can be created through command `vserver new`or creating a YAML file manually. See [this ](server-configuration.md)section on how to do this. 
+Servers are created from a configuration file. This file can be generated through the command `vserver new`or manually from a YAML file manually, as explained [in this section](server-configuration.md).
 
 ## 📥 Importing entities
 
-When you start a new server \(or when you just want to load/import new data\) you can use the `vserver import FILE` command. See [this](importing-entities.md) section for more details.
+After configuring the server, we need to define the users, organizations, collaborations, etc. This can be done using the `vserver import` command, as explained [in this section](importing-entities.md).
+
+Notice that we need to follow the same steps when loading/importing new data.
 
 ## 🏤 Managing Server Data
 
@@ -33,7 +24,9 @@ Managing entities at the server \(e.g. users, organizations, etc...\) is usually
 
 ## 🏎 Starting the server
 
-Once the configuration is done and you created at least one user, you can start the server instance by using `vserver start` and then selecting the configuration you want to use.  Or if you already know the name of the configuration you can use the `--name` flag to specify it. If you have a configuration file which is in a non-default location than you can specify this by the `--config` flag. 
+Once the configuration is done and you created at least one user, you can start the server instance by using `vserver start` and then selecting the configuration you want to use.  If you know the name of the configuration, you can use the flag `--name` to specify it. 
+
+If you have a configuration file which is in a non-default location than you can specify this by the `--config` flag. 
 
 {% hint style="info" %}
 Note that having Docker installed is **not** strictly  necessary to run the server. However, it is needed if you want to run a private registry on the same machine. See [Docker registry](../../installation/docker-registry.md) for details.
@@ -41,7 +34,7 @@ Note that having Docker installed is **not** strictly  necessary to run the serv
 
 ## 🧁 Deployment of a Production environment
 
-We give some recommendations for deploying VANTAGE6-server in [this](deployment.md) section.
+We give some recommendations for deploying a vantage6 server in [this](deployment.md) section.
 
 ## ✍ Logging
 
@@ -67,4 +60,21 @@ Initializing the database
   username: None
 Database initialized!
 ```
+
+## 💻 Server Commands
+
+As a reference, these are the sub-commands available to manage the server\(s\). These commands can also be found by simply calling `vserver` .
+
+| Command | Description |
+| :--- | :--- |
+| `vserver attach` | Attach the logs from the Docker container to the terminal |
+| `vserver files` | List the file locations of the server instance |
+| `vserver import` | Import server entities as a batch |
+| `vserver list` | List the available server instances |
+| `vserver new` | Create a new server configuration |
+| `vserver shell` | Run a server instance python shell |
+| `vserver start` | Start the server |
+| `vserver stop` | Stop a or all running server |
+
+Alright. After having the server up and running, we need to configure the nodes.
 

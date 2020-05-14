@@ -7,12 +7,12 @@ description: 'Installation using the prebuilt, dockerized components'
 Running the dockerized node and/or server is the preferred way of using  **vantage6**. It requires that the Docker runtime is installed \(and running\) and that the **vantage6** command line interface \(CLI\) is available.
 
 {% hint style="info" %}
-See [What to install?](preliminaries.md#docker) for information on how to verify docker is running\).
+See [What to install?](preliminaries.md#docker) for information on how to verify Docker is installed and running properly
 {% endhint %}
 
 #### Installing the Command Line Interface
 
-We have provided a command line interface \(CLI\) that facilitates pulling \(i.e. downloading\) and interacting with the server and node images from the docker registry. This CLI can be installed through Python's `pip` command:
+We have provided a command line interface \(CLI\) that facilitates pulling \(i.e., downloading\) and interacting with the server and node images from the docker registry. This CLI can be installed through Python's `pip` command:
 
 ```bash
 pip install vantage6
@@ -38,5 +38,5 @@ vserver --help
 {% endtab %}
 {% endtabs %}
 
-For information on how to use the vnode and vserver commands, see the sections [Server \(dockerized\)](../usage/running-the-server/) and [Node \(dockerized\)](../usage/running-the-node/).
+For information on how to use the `vnode` and `vserver` commands, see the sections [Server \(dockerized\)](../usage/running-the-server/) and [Node \(dockerized\)](../usage/running-the-node/).
 

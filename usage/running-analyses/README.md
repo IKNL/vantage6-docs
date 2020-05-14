@@ -46,8 +46,8 @@ print( colnames(SEER) )
 
 In a federated situation, you won't have direct access to the data. Instead, you'd have to instruct the nodes to run a docker image that returns the list of column names. Since we'd also have to communicate with the infrastructure, we need two things:
 
-* A docker image \(with software that returns the column names\)
-* A client to facillitate communication
+* A Docker image \(with software that returns the column names\)
+* A client to facilitate communication
 
 Fortunately, a docker image that returns is already available and using it is not too difficult:
 
