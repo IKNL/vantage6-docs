@@ -40,7 +40,20 @@ While it's technically possible to store the configuration files anywhere on you
 
 ### 🗃 Configuration File Structure
 
-Each server instance \(configuration\) can have multiple environments. If you do not want to specify any environment you should only specify the key `application` . In case you do want to use environments you can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .  It should look like this:
+Each server instance \(configuration\) can have multiple environments. You can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .  
+
+{% hint style="info" %}
+We use [DTAP for key environments](https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production). In short:
+
+* `dev` Development environment. It is ok to break things here
+* `test` Testing environment. Here, you can verify that everything works as expected. This environment should resemble as much as possible the target environment where the final solution will be deployed.
+* `acc` Acceptance environment. If the tests were successful, you can try this environment, where the final user will test  his/her analysis to verify if everything meets his/her expectations.
+* `prod` Production environment. Final version of the proposed solution.
+{% endhint %}
+
+If you do not want to specify any environment, you should only specify the key `application` .
+
+In the end, the configuration file should look like this:
 
 ```yaml
 application:
