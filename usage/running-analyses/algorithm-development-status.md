@@ -32,7 +32,7 @@ description: This is a roadmap of the algorithms that are to be implemented in v
 | Box plot | DataSHIELD | 🏗  |
 | Violin plot |  | 🏗  |
 
-### Hypothesis Tests 
+### Hypothesis tests 
 
 | Description | Software Implementation  | vantage6 |
 | :--- | :--- | :--- |
