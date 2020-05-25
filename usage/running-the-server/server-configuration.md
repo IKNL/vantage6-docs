@@ -84,7 +84,7 @@ Should be `prod`, `acc`, `test`, `dev`. In case the _type_ is set to `test` the 
 Internal ip address where the server can be reached. Note that in case you are using the Docker version of vantage6 this is the ip address inside the container, and binds to the ip address `127.0.0.1` at your host machine (This will change in a future release in vantage6).
 
 ### `port`
-Port to which te server listens. In case of the Dockerized version this will be used both internally in the container as at your host (At your host machine the server will be reachable at 127.0.0.1:{port}).
+Port to which te server listens. In case of the Dockerized version this will be used both internally in the container as at your host (At your host machine the server will be reachable at 127.0.0.1:`port`).
 
 ### `api_path`
 API path prefix. (e.g. `https://yourdomain.org/api_path/...`)
@@ -111,6 +111,7 @@ uri: postgresql://username:password@172.17.0.1/database
 ...
 ```
 {% endtab %}
+{% endtabs %}
 
 ### `allow_drop_all`
 This should be set to `false` in production as this allows to completely wipe the database in a single command. Useful to set to `true` when testing/developing.
