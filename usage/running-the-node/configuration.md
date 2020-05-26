@@ -79,20 +79,21 @@ application:
       format:       "%(asctime)s - %(name)-14s - %(levelname)-8s - %(message)s"
       datefmt:      "%H:%M:%S"
 ```
+
 ## 📰 Parameter description
 
 | Parameter | Details |
-| --------- | ----------- |
+| :--- | :--- |
 | `api_key` | API key used to authenticate at the server. |
 | `server_url` | URL of the vantage6 server. |
 | `port` | Port of the vantage6 server. Should be `443` in most cases. |
 | `api_path` | Path of the API. Usually empty or `/api`. |
 | `task_dir` | Local task directory name |
-| `encryption` | Section that contains encryption settings: <br>`enabled`: Boolean to indicate whenever encryption is used or not.<br>`private_key`: path to private key file. <br>See [here](#-encryption) for more details. |
-| `docker_registries` | Section that contains  a list Docker registry login credentials:<br>`registry`: url of the docker registry<br>`username`: username<br>`password`: password<br>See [here](#-docker-login) for more detail. |
-| `allowed_images` | List of [regular expressions](https://en.wikipedia.org/wiki/Regular\_expression) that control which algorithms are allowed on this node. See [here](#-allowed-images) for more detail.
-| `databases` | List of databases in `key`:`value` pair (💔 broken in current version. Will be fixed in a future release, only the default database can be used.) |
-| `logging` | <br>`file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)<br>`backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)<br>`max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)<br>`format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter).<br>`level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels)<br>`use_console`: whenever the output needs to be shown in the console
+| `encryption` | Section that contains encryption settings:  `enabled`: Boolean to indicate whenever encryption is used or not. `private_key`: path to private key file.  See [here](configuration.md#-encryption) for more details. |
+| `docker_registries` | Section that contains  a list Docker registry login credentials: `registry`: url of the docker registry `username`: username `password`: password See [here](configuration.md#-docker-login) for more detail. |
+| `allowed_images` | List of [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) that control which algorithms are allowed on this node. See [here](configuration.md#allowed-images) for more detail. |
+| `databases` | List of databases in `key`:`value` pair \(💔 broken in current version. Will be fixed in a future release, only the default database can be used.\) |
+| `logging` |  `file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter). `level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels) `use_console`: whenever the output needs to be shown in the console |
 
 ### 🔒 Encryption
 
@@ -115,7 +116,7 @@ Note that public keys are managed at organization level, meaning that you only c
 
 ### 🏳 Allowed Images
 
-To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid [regular expression](https://en.wikipedia.org/wiki/Regular\_expression).
+To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
 
 ```yaml
 application:
@@ -138,3 +139,4 @@ application:
       password: your-password!
   ...
 ```
+

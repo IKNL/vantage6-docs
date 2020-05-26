@@ -47,8 +47,6 @@ Node configurations are assumed to be in the user-folder. However if you have a 
 
 The easiest way to read the logs from a node is using `vnode attach` and select the node from which you want to read the logs from.
 
-
-
 ## 💻Node Commands
 
 As a reference, these are the sub-commands available to manage the node\(s\). These commands can also be found by simply calling `vnode` .
@@ -61,3 +59,4 @@ As a reference, these are the sub-commands available to manage the node\(s\). Th
 | `vnode start` | Start a node configuration |
 | `vnode attach` | Connect the console to the node's `stdout` |
 | `create-private-key` | Creates and uploads a new public key |
+
