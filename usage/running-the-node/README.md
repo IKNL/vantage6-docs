@@ -6,10 +6,6 @@ description: In this section we will explain how to configure and manage a node.
 
 It is assumed that Docker, and the vantage6 Python package have been successfully installed. If not, have a look at previous steps described in [What to install?](../../installation/preliminaries.md) and [Dockerized installation](../../installation/dockerized-installation.md).
 
-{% hint style="danger" %}
-At this moment the docker image which contains the node needs to be pulled manually: `docker pull harbor.distributedlearning.ai/infrastructure/node`
-{% endhint %}
-
 {% hint style="info" %}
 An organisation runs a node for each of the collaborations it participates in.
 {% endhint %}
@@ -22,14 +18,14 @@ Similar to the server, nodes are created from a configuration file. This file ca
 
 ## 🔑 Creating a private key
 
-If you're running _any_ node in a collaboration that requires end-to-end encryption, you'll need to setup a private key _**for your organisation**_. This can be done through the command `vnode create-private-key`.  
+If you're running _any_ node in a collaboration that requires end-to-end encryption, you'll need to setup a private key _**for your organisation**_. This can be done through the command `vnode create-private-key`.
 
 Running this command without any arguments, will perform the following steps:
 
 1. prompt for a node configuration to use
 2. prompt for a username/password
 3. retrieve the name of the organisation from the server
-4. create a public/private key pair 
+4. create a public/private key pair
 5. update the node's configuration to point to the \(new\) private key
 6. upload the public key to the server
 
@@ -65,4 +61,3 @@ As a reference, these are the sub-commands available to manage the node\(s\). Th
 | `vnode start` | Start a node configuration |
 | `vnode attach` | Connect the console to the node's `stdout` |
 | `create-private-key` | Creates and uploads a new public key |
-
