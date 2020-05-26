@@ -74,7 +74,7 @@ environments:
 
 ## 📰 Parameter description
 
-| parameter | description |
+| Parameter | Details |
 | --------- | ----------- |
 | `description` | Human readable description of the server instance. This is to help your peers to identify the server. |
 | `type` | Should be `prod`, `acc`, `test` or `dev`. In case the _type_ is set to `test` the JWT-tokens expiration is set to 1 day (default is 6 hours). The other types can be used in future releases of vantage6. |

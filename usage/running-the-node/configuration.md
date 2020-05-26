@@ -14,8 +14,6 @@ The most straight forward way of creating a new server configuration is using th
 
 ![Configuring a new node using the wizard](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
 
-![Example of running &quot;vnode new&quot;](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
-
 By default the node configuration file is stored at user level, which isolates this configuration from other users. In case you want this configuration to be available for all users, simply add the `--system` flag \(make sure you have sufficient rights to do this\).
 
 {% hint style="info" %}
@@ -38,7 +36,7 @@ To start a node using a configuration file at an arbitrary location you should u
 
 ## 🗃 Configuration File Structure
 
-Similar to the server, each node instance \(configuration\) can have multiple environments. You can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .  
+Similar to the server, each node instance \(configuration\) can have multiple environments. You can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .
 
 {% hint style="info" %}
 We use [DTAP for key environments](https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production). In short:
@@ -81,8 +79,22 @@ application:
       format:       "%(asctime)s - %(name)-14s - %(levelname)-8s - %(message)s"
       datefmt:      "%H:%M:%S"
 ```
+## 📰 Parameter description
 
-## 🔒 Encryption
+| Parameter | Details |
+| --------- | ----------- |
+| `api_key` | API key used to authenticate at the server. |
+| `server_url` | URL of the vantage6 server. |
+| `port` | Port of the vantage6 server. Should be `443` in most cases. |
+| `api_path` | Path of the API. Usually empty or `/api`. |
+| `task_dir` | Local task directory name |
+| `encryption` | Section that contains encryption settings: <ul><li>`enabled`: Boolean to indicate whenever encryption is used or not.</li><li>`private_key`: path to private key file</li></ul> See [here](#-encryption) for more details. |
+| `docker_registries` | Section that contains  a list Docker registry login credentials:<ul><li>`registry`: url of the docker registry</li><li>`username`: username</li><li>`password`: password</li></ul> See [here](#-docker-login) for more detail. |
+| `allowed_images` | List of [regular expressions](https://en.wikipedia.org/wiki/Regular\_expression) that control which algorithms are allowed on this node. See [here](#-allowed-images) for more detail.
+| `databases` | List of databases in `key`:`value` pair (💔 broken in current version. Will be fixed in a future release, only the default database can be used.) |
+| `logging` | <ul><li>`file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)</li><li>`backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)</li><li>`max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)</li><li>`format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter).</li><li>`level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels)</li><li>`use_console`: whenever the output needs to be shown in the console</li></ul>
+
+### 🔒 Encryption
 
 Both the server and node need to agree if encryption is used or not. Encryption at the server is managed at collaboration level, i.e. each collaboration determines whenever encryption of all communication is used or not. You can enable or disable encryption in the configuration file by setting the `enabled` key in the encryption section.
 
@@ -101,9 +113,9 @@ To generate a new private key and upload the public key to the server you can us
 Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible \(yet\) to create an unique private key for each node you own.
 {% endhint %}
 
-## 🏳 Allowed Images
+### 🏳 Allowed Images
 
-To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid \(regular expression\)\[[https://en.wikipedia.org/wiki/Regular\_expression](https://en.wikipedia.org/wiki/Regular_expression)\].
+To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid [regular expression](https://en.wikipedia.org/wiki/Regular\_expression).
 
 ```yaml
 application:
@@ -113,7 +125,7 @@ application:
   ...
 ```
 
-## 🐳 Docker Login
+### 🐳 Docker Login
 
 If you are using a private docker repository the environment in which the node needs to be logged in to that repository. In case the Dockerized version of vantage6 is used you need to specify this in the configuration file using the `docker_registries` key.
 
@@ -126,4 +138,3 @@ application:
       password: your-password!
   ...
 ```
-
