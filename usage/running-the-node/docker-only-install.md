@@ -28,7 +28,7 @@ This Docker container expects multiple mounts, a volume, and a environment varia
 | :--- | :--- |
 | /mnt/database.csv | Contains the database file that contains the data that the Node is allowed to access |
 | /mnt/log | _Directory_ where the log files can be stored at the host machine |
-| /mnt/data | _Directory_ where IO files for the algorithms can be stored to \(Unused in this version, however it expects it to be set\) |
+| /mnt/data | Docker data volume which is used for transferring data between node and algorithms |
 | /mnt/config | _Directory_ containing the configuration file |
 | /var/run/docker.sock | Contains the docker.sock from the host system. Usually: //var/run/docker.sock |
 | /mnt/private\_key.pem | **Optional**. If provided the private key will be used to decrypt any incoming messages. |
@@ -38,7 +38,7 @@ This Docker container expects multiple mounts, a volume, and a environment varia
 The node expects a single Docker volume, in which it can share data with the algorithm containers. You can give this volume any name as you specify its name in the environment variables.
 
 ```text
-docker volume create some-name
+docker volume create datavolume-name
 ```
 
 ## 🏎 Run the Node
@@ -53,7 +53,7 @@ docker run \
     -v some-name:/mnt/data-volume \
     -v /host/database.csv:/mnt/database.csv \
     -v /host/log:/mnt/log \
-    -v /host/data:/mnt/data \
+    -v datavolume-name:/mnt/data \
     -v /host/config:/mnt/config \
     -v //var/run/docker.sock:/var/run/docker.sock \
     -v /host/private_key.pem:/mnt/private_key \
