@@ -42,7 +42,7 @@ As a data provider for the **vantage6** solution you need to install the node pa
 
 ## 🚉 Host a vantage6 server **\[server\]**
 
-A a \(central\) server allows parties to connect and exchange computation tasks and their results. To do this you need to install the server package. There are, just as in the case of the node, two flavors: Docker \(prefered\) or non-Docker. Make sure you go though the [General requirements](general-requirements.md) before installing the [Docker](dockerized-installation.md) or [non-Docker](non-dockerized-installation.md).
+A \(central\) server allows parties to connect and exchange computation tasks and their results. To do this you need to install the server package. There are, just as in the case of the node, two flavors: Docker \(prefered\) or non-Docker. Make sure you go though the [General requirements](general-requirements.md) before installing the [Docker](dockerized-installation.md) or [non-Docker](non-dockerized-installation.md).
 
 Besides installing the **vantage6** server you might also want to host a Docker registry. This would contain images that can be used for computations in the **vantage6** solution. See [Docker registry](docker-registry.md) on how to setup this.
 
