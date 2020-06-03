@@ -23,7 +23,7 @@ vserver shell [options]
 
 You should see something resembling the following:
 
-![Starting iPython session will allow you to directly interact with the database models.](../../.gitbook/assets/annotation-2019-06-13-134851.png)
+![](../../.gitbook/assets/vnodenew.jpg)
 
 ## General
 
