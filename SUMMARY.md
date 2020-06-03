@@ -11,6 +11,7 @@
 ## Installation
 
 * [What to install?](installation/preliminaries.md)
+* [General requirements](installation/general-requirements.md)
 * [Dockerized installation](installation/dockerized-installation.md)
 * [Non-dockerized installation](installation/non-dockerized-installation.md)
 * [Docker registry](installation/docker-registry.md)
