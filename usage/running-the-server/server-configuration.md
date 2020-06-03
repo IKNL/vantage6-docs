@@ -12,7 +12,7 @@ It is assumed that the Python package `vantage6` has been successfully installed
 
 The most straight forward way of creating a new server configuration is using the command `vserver new` in Python which allows you to configure the most basic settings. See the image below to get an overview of what happens. And see [parameter description](server-configuration.md#-parameter-description) for an explanation of the parameters.
 
-![](../../.gitbook/assets/vservernew.jpg)
+![](../../.gitbook/assets/vservernew%20%281%29.jpg)
 
 By default the `configuration-file` is stored at system level, which makes this configuration available for _all_ users. In case you want to use a user directory you can add the `--user` flag.
 

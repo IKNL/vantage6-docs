@@ -12,7 +12,7 @@ Configuration of the server can be done either through the command line or by cr
 
 The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings.
 
-![Configuring a new node using the wizard](../../.gitbook/assets/screenshot-2020-04-28-at-12.38.29.png)
+![](../../.gitbook/assets/vnodenew%20%281%29.jpg)
 
 By default the node configuration file is stored at user level, which isolates this configuration from other users. In case you want this configuration to be available for all users, simply add the `--system` flag \(make sure you have sufficient rights to do this\).
 

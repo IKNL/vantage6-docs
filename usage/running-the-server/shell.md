@@ -23,7 +23,7 @@ vserver shell [options]
 
 You should see something resembling the following:
 
-![](../../.gitbook/assets/vnodenew.jpg)
+![](../../.gitbook/assets/vserverlocalshell.jpg)
 
 ## General
 

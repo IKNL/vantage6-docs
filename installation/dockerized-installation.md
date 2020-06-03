@@ -4,7 +4,7 @@ description: 'Installation using the prebuilt, dockerized components'
 
 # Dockerized installation
 
-Running the dockerized node and/or server is the preferred way of using  **vantage6**. It requires that the Docker runtime is installed \(and running\) and that the **vantage6** command line interface \(CLI\) is available.
+Running the dockerized node and/or server is the preferred way of using **vantage6**. It requires that the Docker runtime is installed \(and running\) and that the **vantage6** command line interface \(CLI\) is available.
 
 {% hint style="info" %}
 See [What to install?](preliminaries.md#docker) for information on how to verify Docker is installed and running properly
@@ -42,5 +42,5 @@ vserver --help
 When using Windows, make sure you [share](https://docs.docker.com/docker-for-windows/) you're drives with Docker.
 {% endhint %}
 
-
 For information on how to use the `vnode` and `vserver` commands, see the sections [Server \(dockerized\)](../usage/running-the-server/) and [Node \(dockerized\)](../usage/running-the-node/).
+
