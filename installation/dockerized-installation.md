@@ -10,7 +10,7 @@ Running the dockerized node and/or server is the preferred way of using  **vanta
 See [What to install?](preliminaries.md#docker) for information on how to verify Docker is installed and running properly
 {% endhint %}
 
-#### Installing the Command Line Interface
+## Installing the Command Line Interface
 
 We have provided a command line interface \(CLI\) that facilitates pulling \(i.e., downloading\) and interacting with the server and node images from the docker registry. This CLI can be installed through Python's `pip` command:
 
@@ -38,5 +38,9 @@ vserver --help
 {% endtab %}
 {% endtabs %}
 
-For information on how to use the `vnode` and `vserver` commands, see the sections [Server \(dockerized\)](../usage/running-the-server/) and [Node \(dockerized\)](../usage/running-the-node/).
+{% hint style="warning" %}
+When using Windows, make sure you [share](https://docs.docker.com/docker-for-windows/) you're drives with Docker.
+{% endhint %}
 
+
+For information on how to use the `vnode` and `vserver` commands, see the sections [Server \(dockerized\)](../usage/running-the-server/) and [Node \(dockerized\)](../usage/running-the-node/).
