@@ -84,7 +84,9 @@ The following environment variables need to be available to the algorithm:
       <td style="text-align:left">Port to which the central server listens</td>
     </tr>
   </tbody>
-</table>{% hint style="info" %}
+</table>
+
+{% hint style="info" %}
 From version 0.3.0 the same environment variables will be used, however the `host`, `api_path`and `port` point towards a local proxy server as the algorithm container no longer has internet access.
 {% endhint %}
 
