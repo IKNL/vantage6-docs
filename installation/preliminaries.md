@@ -46,9 +46,23 @@ Besides installing the **vantage6** server you might also want to host a Docker 
 
 ## 👷 Development of vantage6
 
-TODO
+Make sure you installed the [General requirements](general-requirements.md). As a vantage6-developer you should clone our [master repository](https://github.com/iknl/vantage6-master) \(and all its sub-modules\).
+
+```text
+git clone https://github.com/IKNL/vantage6-master
+```
+
+Then install the sub-modules \(packages\) as [editable](https://pip.pypa.io/en/stable/reference/pip_install/#editable-installs):
+
+```text
+pip install -e vantage6-master/vantage6-common
+pip install -e vantage6-master/vantage6-client
+pip install -e vantage6-master/vantage6
+pip install -e vantage6-master/vantage6-node
+pip install -e vantage6-master/vantage6-server
+```
 
 ## 🚧 Development of algorithms for vantage6
 
-TODO
+Section to be created in the future. Please contact us on [Discord ](https://discord.gg/WxcrzXp)if you want to develop an algorithm!
 
