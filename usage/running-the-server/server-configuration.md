@@ -19,8 +19,11 @@ By default the `configuration-file` is stored at system level, which makes this 
 To update a configuration you need to modify the created YAML file. To see where this file is located you can use the command `vserver files` . Do not forget to specify the flag `--system` in the case of a system-wide configuration or the flag `--user` in case of a user-level configuration.
 
 {% hint style="info" %}
+**Node and server on the same machine**  
+The challenge is that the node can reach \(find\) the server. This is only difficult when using the dockerized node, and differs per operating system.
+
 **Windows and Mac**  
-In case you want to run the node and the server on the same machine. You need to configure both the server and node so that they can reach each other. Setting the server `ip` to `127.0.0.1` makes the server reachable at your localhost \(even when the dockerized version is used\). In order for the node to reach this server, set the `server_url` to `host.docker.internal`. 
+Setting the server `ip` to `127.0.0.1` makes the server reachable at your localhost \(even when the dockerized version is used\). In order for the node to reach this server, set the `server_url` to `host.docker.internal`. 
 
 **Linux**  
 You should bind the server to the network interface, this ip is reachable from within docker \(thus from the node\)
