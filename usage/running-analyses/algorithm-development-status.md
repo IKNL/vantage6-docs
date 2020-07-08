@@ -37,10 +37,10 @@ description: This is a roadmap of the algorithms that are to be implemented in v
 | Description | Horizontal | Vertical | Program used | Software Implementation  | vantage6 |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | T-test | 🏗 | 🏗 |  | DataSHIELD | 🏗  |
-| Chi-square  | ✅ | 🏗 | R | DataSHIELD | ✅ |
+| Chi-square  | ✅ | 🏗 | R | vantage6 | ✅ |
 | Z-test | 🏗 | 🏗 |  | DataSHIELD | 🏗  |
 | ANOVA | 🏗 | 🏗 |  | DataSHIELD | 🏗  |
-| Fisher's Exact test | 🏗 | 🏗 | Python  | DataSHIELD | 🏗  |
+| Fisher's Exact test | 🏗 | 🏗 |  | DataSHIELD | 🏗  |
 | Pearson Correlation | 🏗 | 🏗 |  | SCS | 🏗  |
 | Log-Rank test | 🏗 | 🏗 |  |  | 🏗  |
 | Wald test | 🏗 | 🏗 |  |  | 🏗 |
