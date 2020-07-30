@@ -6,7 +6,7 @@ description: >-
 
 # Creating a New \(Complex\) Algorithm
 
-In the [previous section](create-new-algorithm.md), we saw how to create a simple algorithm in the Vantage. However,it only explains the essence. Algorithms trend to be more complex. In this section, we will explain the steps to create a more complicated algorithm, which includes an iterative process \(e.g., `for` loop\) between the central server and the nodes, in Python.
+In the [previous section](create-new-algorithm.md), we saw how to create a simple algorithm in the Vantage. However, it only explains the essence. Algorithms trend to be more complex. In this section, we will explain the steps to create a more complicated algorithm, which includes an iterative process \(e.g., `for` loop\) between the central server and the nodes, in Python.
 
 ## Scenario
 
