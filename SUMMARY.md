@@ -32,8 +32,8 @@
 
 ## Release Notes <a id="release-notes-1"></a>
 
-* [1.0.0 - Trolltunga](release-notes-1/release-notes/README.md)
-  * [1.1.0](release-notes-1/release-notes/1.1.0.md)
+* [1.1.0](release-notes-1/1.1.0.md)
+* [1.0.0 - Trolltunga](release-notes-1/release-notes.md)
 
 ## Algorithm Development
 
