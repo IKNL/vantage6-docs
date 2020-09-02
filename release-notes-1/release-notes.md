@@ -1,5 +1,5 @@
 ---
-description: Currently in alpha
+description: First official release
 ---
 
 # 1.0.0 - Trolltunga
