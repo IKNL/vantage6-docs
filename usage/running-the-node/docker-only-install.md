@@ -1,10 +1,10 @@
 ---
 description: >-
   In this page we'll explain how to run a Node instance without using the
-  VANTAGE6 CLI
+  vantage6 CLI.
 ---
 
-# Docker-only Install
+# Without the CLI
 
 {% hint style="danger" %}
 This is not the intended use! However there are use-cases where you do not want to use our CLI and start the Node docker container manually.
