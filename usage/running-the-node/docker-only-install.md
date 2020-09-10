@@ -15,7 +15,7 @@ Pull the latest Node docker image:
 {% tabs %}
 {% tab title="Bash" %}
 ```bash
-docker pull harbor.distributedlearning.ai/infrastructure/node
+docker pull harbor.vantage6.ai/infrastructure/node
 ```
 {% endtab %}
 {% endtabs %}
