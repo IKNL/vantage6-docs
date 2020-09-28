@@ -100,7 +100,7 @@ environments:
 
 See [Configuration File Structure](server-configuration.md#-configuration-file-structure) for example values.
 
-### 💌 Mail server
+### 📫 Mail server
 
 {% hint style="info" %}
 The vantage6 server would work without configuring the mail server. However in order to let users reset their password \(and in the future receive notifications\) these settings are required.
