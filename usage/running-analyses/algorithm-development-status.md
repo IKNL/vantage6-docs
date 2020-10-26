@@ -17,7 +17,7 @@ description: This is a roadmap of the algorithms that are to be implemented in v
 | Median | ✅ | 🏗 | Python | DataSHIELD | ✅ |
 | Minimum | ✅ | 🏗 | Python | DataSHIELD | ✅ |
 | Maximum | ✅ | 🏗 | Python | DataSHIELD | ✅ |
-| Contingency tables | 🏗 | 🏗 | Python | DataSHIELD | 🏗  |
+| Contingency tables | ✅ | 🏗 | Python | DataSHIELD | ✅ |
 | Proportion | 🏗 | 🏗 |  | DataSHIELD | 🏗 |
 | Odds ratio | 🏗 | 🏗 |  | DataSHIELD | 🏗 |
 
