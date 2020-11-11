@@ -26,3 +26,17 @@ docker run hello-world
 🐳 We recommend to always use the latest version of Docker.
 {% endhint %}
 
+#### ✒ Signed Images
+
+In case you only allow to use signed images \(see [https://docs.docker.com/engine/security/trust/](https://docs.docker.com/engine/security/trust/)\) you should set the environment variable `DOCKER_CONTENT_TRUST = 1` .
+
+{% hint style="danger" %}
+By doing so you might not be able to use certain algorithms. You can check this by verifying that the images you want to be used are signed. 
+
+In the case that you are using our Docker repository you need to use harbor**2**.vantage6.ai
+{% endhint %}
+
+
+
+
+
