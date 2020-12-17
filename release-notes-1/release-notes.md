@@ -6,7 +6,7 @@ description: First official release
 
 ## 1.2.3
 
-* **Bugfix/Feature:**
+* **Feature**
   * The node is now compatible with the Harbor v2.0 API
 
 ## 1.2.2
