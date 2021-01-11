@@ -7,7 +7,7 @@ description: >-
 # Without the CLI
 
 {% hint style="danger" %}
-This is not the intended use! However there are use-cases where you do not want to use our CLI and start the Node docker container manually.
+This is not the intended use! However there are use-cases where you do not want to use our CLI and start the Node docker container manually \(e.g. when using docker-compose\).
 {% endhint %}
 
 Pull a server docker image from our docker registry. If you do not specify a version it will automatically pull the latest version.

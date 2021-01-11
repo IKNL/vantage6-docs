@@ -35,6 +35,7 @@
 ## Release Notes <a id="release-notes-1"></a>
 
 * [1 Trolltunga](release-notes-1/release-notes.md)
+* [2 Harukas](release-notes-1/2-harukas.md)
 
 ## Algorithm Development
 
@@ -48,3 +49,4 @@
 ## References
 
 * [Glossary](references/glossary.md)
+

@@ -164,6 +164,34 @@ user.save()
 {% endtab %}
 {% endtabs %}
 
+## 🎩 Roles and Rules
+
+A user can have multiple roles and rules assigned to them. These are used to determine if the user has permission to view, edit, create or delete certain resources. A role is a collection of rules.
+
+{% tabs %}
+{% tab title="iPython" %}
+```bash
+# display all available rules
+db.Rule.get()
+
+# display all available roles
+db.Role.get()
+
+# retrieve a certain rule from the DB
+rule = db.Rule.get_by_("node", Scope, Operation)
+
+# create a new role
+role = db.Role(name="role-name", rules=[rule])
+rol.save()
+
+# or assign the rule directly to the user
+user = db.User.getByUsername("some-existing-username")
+user.rules.append(rule)
+user.save()
+```
+{% endtab %}
+{% endtabs %}
+
 ## 🤲 Collaborations
 
 A collaboration consists of one or more organizations. 
