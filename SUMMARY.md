@@ -22,6 +22,7 @@
   * [Configuration](usage/running-the-server/server-configuration.md)
   * [Importing Entities](usage/running-the-server/importing-entities.md)
   * [iPython Shell](usage/running-the-server/shell.md)
+  * [Permission management](usage/running-the-server/permission-management.md)
   * [Deployment](usage/running-the-server/deployment.md)
   * [Without the CLI](usage/running-the-server/without-the-cli.md)
 * [Running the Node](usage/running-the-node/README.md)
@@ -47,4 +48,3 @@
 ## References
 
 * [Glossary](references/glossary.md)
-
