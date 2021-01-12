@@ -27,4 +27,3 @@ When applying federated learning, it is possible to distinguish two situations:
 
 * Different parties have the same features of different patients. This is known as _horizontally-partitioned_ data.
 * Different parties have different features of the same patients. This is known as _vertically-partitioned_ data.
-

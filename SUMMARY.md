@@ -1,16 +1,16 @@
 # Table of contents
 
-* [Welcome to the vantage6 docs!](README.md)
+* [Welcome](README.md)
 
-## About / Background <a id="about-privacy-preserving-federated-learning"></a>
+## About / Background
 
-* [Introduction](about-privacy-preserving-federated-learning/introduction.md)
-* [The infrastructure](about-privacy-preserving-federated-learning/the-infrastructure.md)
-* [General requirements](about-privacy-preserving-federated-learning/requirements.md)
+* [Introduction](background/introduction.md)
+* [The infrastructure](background/the-infrastructure.md)
+* [General requirements](background/requirements.md)
 
 ## Installation
 
-* [What to install?](installation/preliminaries.md)
+* [What to install?](installation/what-to-install.md)
 * [General requirements](installation/general-requirements.md)
 * [Dockerized installation](installation/dockerized-installation.md)
 * [Non-dockerized installation](installation/non-dockerized-installation.md)
@@ -49,4 +49,3 @@
 ## References
 
 * [Glossary](references/glossary.md)
-
