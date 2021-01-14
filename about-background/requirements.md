@@ -4,7 +4,7 @@ description: This page describes general steps/requirements for using federated 
 
 # General requirements
 
-Federated learning is _not_ a quick-fix for every situation that requires privacy preserving computation. Below you'll find a general list of steps that's required to start \(& finish\) a successful project \(assuming [horizontally-partitioned data](introduction.md#data-partitioning)\).
+Federated learning is _not_ a quick-fix for every situation that requires privacy preserving computation. Below you'll find a general list of steps that's required to start \(& finish\) a successful project \(assuming [horizontally-partitioned data]()\).
 
 ## Establish a collaboration
 
@@ -35,5 +35,5 @@ Defining the exact meaning of the variables involves two things \(maybe even dec
 
 ## Install the software
 
-Lastly, the parties need to install the proper software, as described in the [next section](../installation/preliminaries.md).
+Lastly, the parties need to install the proper software, as described in the [next section](../installation/what-to-install.md).
 

@@ -4,7 +4,7 @@ description: In this section we will explain how to configure and manage a node.
 
 # Running the Node
 
-It is assumed that Docker, and the vantage6 Python package have been successfully installed. If not, have a look at previous steps described in [What to install?](../../installation/preliminaries.md) and [Dockerized installation](../../installation/dockerized-installation.md).
+It is assumed that Docker, and the vantage6 Python package have been successfully installed. If not, have a look at previous steps described in [What to install?](../../installation/what-to-install.md) and [Dockerized installation](../../installation/dockerized-installation.md).
 
 {% hint style="info" %}
 An organisation runs a node for each of the collaborations it participates in.

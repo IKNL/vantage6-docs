@@ -6,7 +6,7 @@ description: >-
 
 # Using the API
 
-It is assumed that you obtained a **username** and **password** for a **vantage6** server and that the organization to which you belong participates at least in one collaboration \(which could be a collaboration consisting only of your organization\). It is also assumed that the algorithm you want to execute is already available \(and allowed in this collaboration\). If you want to add your own algorithm please see [Create New Algorithm](../algorithm-development/create-new-algorithm.md).
+It is assumed that you obtained a **username** and **password** for a **vantage6** server and that the organization to which you belong participates at least in one collaboration \(which could be a collaboration consisting only of your organization\). It is also assumed that the algorithm you want to execute is already available \(and allowed in this collaboration\). If you want to add your own algorithm please see [Create New Algorithm](../../algorithm-development/create-new-algorithm.md).
 
 The following steps are required:
 

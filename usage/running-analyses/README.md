@@ -1,23 +1,54 @@
 ---
-description: Here's what's to it ...
+description: Interacting with the server API
 ---
 
-# Running analyses
+# Using the Client
 
-## A little background of what's happening under the hood
+To interact with the _vantage6_ server there is a Python and R client in development. Keep in mind that these Clients are could change with every release and that the Python and R client are quite different. 
 
-As explained in previous sections, running an algorithm consists of the following steps:
+There are basically two reasons to use the Client:
 
-* Send a task to the nodes in your collaboration, consisting of:
-  * The docker image you want the nodes to run \(the docker image contains the algorithm you're interested in\)
-  * Any input you might want to provide to the docker image
-* Each node will execute the docker image. 
-  * The code/algorithm in the docker image will have access to:
-    * The node's data
-    * The input that was provided in the task
-  * The node returns the result returned by the algorithm
+* You want to manage users 👥, organizations 🏢, collaborations 🤝, etc. 🖱 
+* You want to request a computation 🧮 and collect their results 🧪 
 
-Of course, there are few people that would actually like to run a regression \(or another statistical analysis\) this way. Therefore, the algorithms that have been written for the infrastructure have been packaged in such a way that using them is manageable.
+The R client is currently only usable to create computation requests and retrieve their results. The Python-client is also able to manage users, roles, collaborations, etc.
+
+Besides using a client, it is also possible to use the API from the server directly. The API docs can be found [here](https://harukas.vantage6.ai/apidocs).
+
+{% hint style="info" %}
+We are also working on a UI to manage users, roles, rules, etc. at the server, see [https://github.com/iknl/vantage6-ui](https://github.com/iknl/vantage6-ui)
+{% endhint %}
+
+## Administration
+
+You can use the _vantage6_ server API to manage these. To make this process easier the Python _vantage6-client_ can be used. The R client does not have these tools \(yet\). Keep in mind that you need permission for _all_ operations you perform. 
+
+{% page-ref page="python-client.md" %}
+
+{% hint style="info" %}
+As the root user you can use the [iPython shell](../running-the-server/shell.md) to manage users, organizations, collaborations, etc. _Regular_ users do not have access to this shell. 
+{% endhint %}
+
+## Computation Requests and Results
+
+This is the core task of vantage6. Receiving tasks \(computation requests\) and collecting the results from the data-station. Both the Python and R client are able to help you perform these tasks. To give you a little bit of intuition what happens under the hood we outline the process here:
+
+1. User requests computation, consisting of:
+   * The algorithm to use \(as a Docker image 🐳 name\)
+   * Any input you want to provide to the algorithm
+   * Which collaboration, and organizations to include
+2. Nodes receive and execute the request
+   * The algorithm will have access to:
+     * The \(local\) node's data
+     * The input provided by the user
+   * The node returns the results
+3. User collect the results from the server
+
+In step \(1\) and \(3\) the user needs to do something. This is where our clients helps.
+
+{% page-ref page="python-client.md" %}
+
+{% page-ref page="r-client.md" %}
 
 ## So how, then?
 

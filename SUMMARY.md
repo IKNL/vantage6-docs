@@ -4,9 +4,9 @@
 
 ## About / Background
 
-* [Introduction](background/introduction.md)
-* [The infrastructure](background/the-infrastructure.md)
-* [General requirements](background/requirements.md)
+* [Introduction](about-background/introduction.md)
+* [The infrastructure](about-background/the-infrastructure.md)
+* [General requirements](about-background/requirements.md)
 
 ## Installation
 
@@ -28,9 +28,11 @@
 * [Running the Node](usage/running-the-node/README.md)
   * [Configuration](usage/running-the-node/configuration.md)
   * [Without the CLI](usage/running-the-node/docker-only-install.md)
-* [Running analyses](usage/running-analyses/README.md)
-  * [Algorithm development status](usage/running-analyses/algorithm-development-status.md)
-* [Using the API](usage/your-first-computation-task.md)
+* [Using the Client](usage/running-analyses/README.md)
+  * [Python Client](usage/running-analyses/python-client.md)
+  * [R Client](usage/running-analyses/r-client.md)
+  * [Using a Client](usage/running-analyses/using-a-client.md)
+  * [Using the API](usage/running-analyses/your-first-computation-task.md)
 
 ## Release Notes <a id="release-notes-1"></a>
 
@@ -39,6 +41,7 @@
 
 ## Algorithm Development
 
+* [Algorithm development status](algorithm-development/algorithm-development-status.md)
 * [Creating a New Algorithm](algorithm-development/create-new-algorithm.md)
 * [Creating a New \(Complex\) Algorithm](algorithm-development/creating-a-new-complex-algorithm.md)
 
@@ -49,3 +52,4 @@
 ## References
 
 * [Glossary](references/glossary.md)
+
