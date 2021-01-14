@@ -11,7 +11,7 @@ There are basically two reasons to use the Client:
 * You want to manage users 👥, organizations 🏢, collaborations 🤝, etc. 🖱 
 * You want to request a computation 🧮 and collect their results 🧪 
 
-The R client is currently only usable to create computation requests and retrieve their results. The Python-client is also able to manage users, roles, collaborations, etc.
+The R client is currently only able to create computation requests and retrieve their results. The Python-client is also able to manage users, roles, collaborations, etc.
 
 Besides using a client, it is also possible to use the API from the server directly. The API docs can be found [here](https://harukas.vantage6.ai/apidocs).
 
@@ -19,7 +19,7 @@ Besides using a client, it is also possible to use the API from the server direc
 We are also working on a UI to manage users, roles, rules, etc. at the server, see [https://github.com/iknl/vantage6-ui](https://github.com/iknl/vantage6-ui)
 {% endhint %}
 
-## Administration
+## 📔 Administration
 
 You can use the _vantage6_ server API to manage these. To make this process easier the Python _vantage6-client_ can be used. The R client does not have these tools \(yet\). Keep in mind that you need permission for _all_ operations you perform. 
 
@@ -29,7 +29,7 @@ You can use the _vantage6_ server API to manage these. To make this process easi
 As the root user you can use the [iPython shell](../running-the-server/shell.md) to manage users, organizations, collaborations, etc. _Regular_ users do not have access to this shell. 
 {% endhint %}
 
-## Computation Requests and Results
+## 🔭 Computation Requests and Results
 
 This is the core task of vantage6. Receiving tasks \(computation requests\) and collecting the results from the data-station. Both the Python and R client are able to help you perform these tasks. To give you a little bit of intuition what happens under the hood we outline the process here:
 
