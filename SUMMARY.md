@@ -29,7 +29,7 @@
   * [Configuration](usage/running-the-node/configuration.md)
   * [Without the CLI](usage/running-the-node/docker-only-install.md)
 * [Using the Client](usage/running-analyses/README.md)
-  * [Python Client](usage/running-analyses/python-client.md)
+  * [Python client](usage/running-analyses/python-client.md)
   * [R Client](usage/running-analyses/r-client.md)
   * [Using a Client](usage/running-analyses/using-a-client.md)
   * [Using the API](usage/running-analyses/your-first-computation-task.md)
