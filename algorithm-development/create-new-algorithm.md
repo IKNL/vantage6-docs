@@ -295,3 +295,22 @@ docker build -t docker-registry.distributedlearning.ai/dmean .
 docker push docker-registry.distributedlearning.ai/dmean 
 ```
 
+## Cross-language serialization
+
+It is possible that a vantage6 algorithm is developed in one programming language, but you would like to run the task from another language. For these kinds of usecases the python algorithm wrapper and client support cross-language serialization. By default input to the algorithms and output back to the client are serialized using pickle. However, it is possible to define a different serialization format.
+
+Input and output serialization can be specified as follows:
+
+```bash
+client.post_task('mytask', image='harbor2.vantage6.ai/testing/v6-test-py', 
+                 collaboration_id=COLLABORATION_ID,
+                 organization_ids=ORGANIZATION_IDS,
+                 data_format='json', # Specify input format to the algorithm
+                 input_={'method': 'column_names',
+                         'kwargs': {'data_format': 'json'}, # Specify output format 
+                        })                                  # back to the client
+
+```
+
+
+
