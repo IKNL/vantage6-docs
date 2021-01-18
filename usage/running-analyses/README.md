@@ -108,5 +108,44 @@ vtg.basic::colnames(client)
 # [22] "Censor"  
 ```
 {% endtab %}
+
+{% tab title="Python" %}
+```
+import vantage6.client as vtgclient
+
+
+# Setup local host
+HOST = 'http://vserver'
+PORT = 5000
+IMAGE = 'harbor2.vantage6.ai/testing/v6-test-py'
+
+USERNAME = 'yourusername'
+PASSWORD = 'yourpassword'
+
+# ID of a collaboration that includes your organization
+COLLABORATION_ID = 1 
+
+# IDs of the organizations where you wish to run
+# the task. They need to be part of the
+# collaboration.
+ORGANIZATION_IDS = [1, 2, 3]
+
+client = vtgclient.Client(HOST, PORT)
+client.authenticate(USERNAME, PASSWORD)
+
+client.setup_encryption(None)
+
+# If you have configured end-to-end encryption between nodes you need to
+# uncomment the following line and fill in the path to your rsa private key
+# client.setup_encryption('path/to/rsa_private_key')
+
+# Retrieve the colummn names of the datasets at all datastations
+task = client.post_task('mytask', image='harbor2.vantage6.ai/testing/v6-test-py', 
+                        collaboration_id=COLLABORATION_ID,
+                        organization_ids=ORGANIZATION_IDS,
+                        input_={'method': 'column_names'})
+
+```
+{% endtab %}
 {% endtabs %}
 
