@@ -8,7 +8,7 @@
 
 ### Descriptive statistics
 
-| Description | Horizontal | Vertical | Program used |
+| Description | Horizontal | Vertical | Language |
 | :---        | :---       | :---     | :---         |
 | Mean        | ✅         |        | Python       |
 | Standard deviation | ✅  |        | Python       |
@@ -24,7 +24,7 @@
 
 ### Visualization
 
-| Description | Horizontal | Vertical | Program used |
+| Description | Horizontal | Vertical | Language |
 | :---        | :---       | :---     | :---         |
 | Histogram   | ✅         |        | Python      |
 | Contour plot |         |         |              |
@@ -35,7 +35,7 @@
 
 ### Hypothesis tests
 
-| Description | Horizontal | Vertical | Program used |
+| Description | Horizontal | Vertical | Language |
 | :---        | :---       | :---     | :---         |
 | T-test      | ✅         |         | Python      |
 | Chi-square  | ✅         |        | R            |
@@ -48,14 +48,14 @@
 
 ### Variable selection
 
-| Description | Horizontal | Vertical | Program used |
+| Description | Horizontal | Vertical | Language |
 | :---        | :---       | :---     | :---         |
 | AIC         |          |         |             |
 | Likelihood Ratio test |  |       |              |
 
 ### Models
 
-| Description | Horizontal | Vertical | Program used |
+| Description | Horizontal | Vertical | Language |
 | :---        | :---       | :---     | :---         |
 | Linear Regression | ✅   |        | R            |
 | Logistic Regression | ✅ |        | R            |
@@ -64,7 +64,7 @@
 
 ### Survival models
 
-| Description | Horizontal | Vertical | Program used  |
+| Description | Horizontal | Vertical | Language  |
 | :---        | :---       | :---     | :---          |
 | Kaplan Meier |         |         |              |
 | Cox Proportional Hazards regression | ✅ |  | R  |
