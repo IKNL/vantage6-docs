@@ -100,11 +100,11 @@ print(f"global average = {Q_average}.")
 
 ## Standardizing IO
 
-The algorithm receives parameter input in a txt-file, and also writes the output back to a txt-file. The database is also available as a path in the environment variables. In the case o
+The algorithm receives parameter input in a file, and also writes the output back to a file. The database is also available as a path in the environment variables.
 
 ### IO files and variables
 
-#### /app/input.txt
+#### /app/input
 
 The recommended format \(to keep maximum flexibility\) is a JSON file containing three keys: `method`, `args` and `kwargs` in which the `method` is the method name and the `args` and `kwargs` the input for this method in python-style. In case of the node algorithm in python:
 
@@ -116,7 +116,7 @@ The recommended format \(to keep maximum flexibility\) is a JSON file containing
 }
 ```
 
-#### /app/output.txt
+#### /app/output
 
 This file contains the output of the method that was triggered in the Docker image. If possible, use JSON as the output format. 
 
@@ -197,11 +197,11 @@ with open("app/output.txt", 'w') as fp:
 ```python
 import pandas
 
-from pytaskmanager.node.FlaskIO import ClientContainerProtocol
+from vantage6.client import ContainerClient
 
 def master_algorithm():
     # setup communication client, Note this is subjected to change
-    client = ClientContainerProtocol(
+    client = ContainerClient(
         token=token, 
         host=os.environ["HOST"],
         port=os.environ["PORT"], 
@@ -209,7 +209,7 @@ def master_algorithm():
     )
     
     # define inputs
-    input_ = {"method": "node","args": [],"kwargs": {}}
+    input_ = {"method": "node", "args": [], "kwargs": {}}
     
     # create tasks at the server
     task = client.create_new_task(input_)
@@ -255,7 +255,7 @@ def node_algorithm(path, column_name="numbers"):
 {% endtabs %}
 
 {% hint style="info" %}
-Note that if we obtain the results we use the key **result** which we do not supply in the return values of the functions \(e.g. `node_algorithm`\). This key is added by the node if the results are send back to the server. 
+Note that if we obtain the results, from the dictonairy, we use the key **result** which we do not supply in the return values of the functions \(e.g. `node_algorithm`\). The node exapsulates the result from the algorithm to also contain some metadata. Therefore the actual results need to be retrieved from the _result_ key.
 {% endhint %}
 
 ## Dockerize distributed algorithm
@@ -291,8 +291,8 @@ ppdli
 Now a docker-image can be created from our project using this docker-recipe, and we can push it to the registry.
 
 ```bash
-docker build -t docker-registry.distributedlearning.ai/dmean .
-docker push docker-registry.distributedlearning.ai/dmean 
+docker build -t harbor2.vantage6.ai/project/dmean .
+docker push harbor2.vantage6.ai/project/dmean 
 ```
 
 ## Cross-language serialization
@@ -302,14 +302,17 @@ It is possible that a vantage6 algorithm is developed in one programming languag
 Input and output serialization can be specified as follows:
 
 ```bash
-client.post_task('mytask', image='harbor2.vantage6.ai/testing/v6-test-py', 
-                 collaboration_id=COLLABORATION_ID,
-                 organization_ids=ORGANIZATION_IDS,
-                 data_format='json', # Specify input format to the algorithm
-                 input_={'method': 'column_names',
-                         'kwargs': {'data_format': 'json'}, # Specify output format 
-                        })                                  # back to the client
-
+client.post_task(
+    name='mytask', 
+    image='harbor2.vantage6.ai/testing/v6-test-py', 
+    collaboration_id=COLLABORATION_ID,
+    organization_ids=ORGANIZATION_IDS,
+    data_format='json', # Specify input format to the algorithm
+    input_={
+        'method': 'column_names',
+        'kwargs': {'data_format': 'json'}, # Specify output format 
+    }
+)
 ```
 
 
