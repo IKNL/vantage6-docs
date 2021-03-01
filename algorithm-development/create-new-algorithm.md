@@ -6,14 +6,14 @@ description: >-
 
 # Creating a New Algorithm
 
-It is assumed that the algorithm that you want to use is mathematically possible for a separated dataset. In the following sections we use a simple average algorithm to explain the different steps to create an algorithm for Vantage. The following steps should be taken to create a Vantage ready algorithm:
+It is assumed that it is mathematically possible to create a federated version of the algorithm you want to use. In the following sections we create a federated algorithm to compute the average of a distributed dataset. An overview of the steps that we are going though:
 
 1. Mathematically decompose the model
-2. Implement and test locally using your preferred language
-3. Standardize I/O
+2. Implement and test locally
+3. Vantage6 algorithm wrapper
 4. Dockerize and push to a registry 
 
-## The mathematical problem
+## 📝 The mathematical problem
 
 We want to now the average of column **X** from a dataset **Q** which contains **n** samples. Dataset **Q** is ****horizontally partitioned in dataset $$A = [a_1, a_2 ... a_j] = [q_1, q_2 ... q_j]$$ ****and $$B = [b_{1}, b_{2} ... b_k] = [q_{j+1}, q_{j+2}...q_{n}]$$ **.** The average of dataset **Q** is computed as:
 
@@ -27,34 +27,41 @@ $$
 Q_{mean} = \frac{(a_1+a_2+...+a_j) + (b_1+b_2+...+b_k)}{j+k} = \frac{\sum A + \sum B }{j+k}
 $$
 
-Thus we need to count the number of samples in each dataset, and we need to the total sum of each dataset. Only then we can compute the global average of dataset **A** and **B.**
+We both need to count the number of samples in each dataset and we need the total sum of each dataset. Then we can compute the global average of dataset **A** and **B.**
 
 {% hint style="danger" %}
 We cannot simply compute the average on each node and combine them, as this would be mathematically incorrect. This would only work in the case if dataset **A** and **B** contain the same number of samples.
 {% endhint %}
 
-## The algorithm
-
-The algorithm consist of two separate parts: 1\) the central part of the algorithm, and 2\) the part that is executed at the node. In case of the average the nodes compute the sum and the count of samples in the dataset, the central part of the algorithm will combine these to a global average.
+## 👨💻 Implementation
 
 {% hint style="warning" %}
-In these examples we use python, however you are free to choose any language. The only requirements are: 1\) It needs to be able to create HTTP-requests, and 2\) and needs to be able to read and write to files. 
+In this examples we use python, however you are free to choose any language. The only requirements are: 1\) It needs to be able to create HTTP-requests, and 2\) and needs to be able to read and write to files. 
+
+However is you use a different language you are not able to use our wrapper. Reach us on [Discord](https://discord.gg/yAyFf6Y) to discuss how this works. 
 {% endhint %}
+
+Now that we have figured out the maths, we can translate it to an implementation. A federated algorithm consist of two parts:  
+
+1. Central part of the algorithm which is responsible for combining the partial results from the data station. In our case that would be dividing the sum of the totals with the sum of observations.
+2. Federated part of the algorithm which is responsible for the creating the partial results. In our case this would be computing the total \(=sum\) and number of observations.
 
 {% hint style="info" %}
 The central part of the algorithm can either be run on the machine of the researcher himself or in a master container which runs on a node, the latter is the preferred method.
 
-In case the researcher runs this part himself he needs to have a proper setup to do so \(i.e. python 3.5+ and the necessary dependencies\). This is especially useful when developing new algorithms.
+In case the researcher runs this part himself he needs to have a proper setup to do so \(i.e. python 3.5+ and the necessary dependencies\). This is useful when developing new algorithms.
 {% endhint %}
 
-### The node algorithm
+### 💕 Federated Part
 
 The node that runs this part contains a CSV-file with one column **numbers** which we want to use to compute the global mean. We assume that this column has no NaN values.
 
 ```python
 import pandas
 
-def node_algorithm(path, column_name="numbers"):
+def federated_part(path, column_name="numbers"):
+    """Compute the sum and number of observations of a column"""
+    
     # extract the column numbers from the CSV
     numbers = pandas.read_csv(path)[column_name]
     
@@ -69,12 +76,13 @@ def node_algorithm(path, column_name="numbers"):
     }
 ```
 
-### The central algorithm
+### ❤ The central algorithm
 
-The central algorithm receives the sums and counts from all sites and combines these to a global mean.
+The central algorithm receives the sums and counts from all sites and combines these to a global mean. This could be from one or more sites.
 
 ```python
-def central_algorithm(node_outputs):
+def central_part(node_outputs):
+    """Combine the partial results to a global average"""
     global_sum = 0
     global_count = 0
     for output in node_outputs:
@@ -85,22 +93,50 @@ def central_algorithm(node_outputs):
         
 ```
 
-### Local testing
+### 🧪 Local testing
 
 To test simple create two datasets **A** and **B**, both having a numerical column **numbers**. Then run the following:
 
 ```python
 outputs = [
-    node_algorithm("path/to/dataset/A"),
-    node_algorithm("path/to/dataset/B")
+    federated_part("path/to/dataset/A"),
+    federated_part("path/to/dataset/B")
 ]
-Q_average = central_algorithm(outputs)["average"]
+Q_average = central_part(outputs)["average"]
 print(f"global average = {Q_average}.")
 ```
 
-## Standardizing IO
+## 🌯 Algorithm wrapper 
 
-The algorithm receives parameter input in a file, and also writes the output back to a file. The database is also available as a path in the environment variables.
+{% hint style="success" %}
+A good starting point would be to use the boilerplate from our [Github](https://github.com/iknl/v6-boilerplate-py). This section gives background on all the steps needed to get to this boilerplate but also provides some background information.
+{% endhint %}
+
+Now that we have a federated implementation of our algorithm we need to incorporate it in the vantage6 infrastructure. The infrastructure handles the communication with the server and provides data access to the algorithm. 
+
+The algorithm consumes a file containing the input. This contains both the method name to be triggered as well as the arguments provided to the method. The algorithm has also access to a CSV file \(in the future this could also be a database\) on which the algorithm can run. Finally when the algorithm is finished it writes back the output to a different file. 
+
+The central part of the algorithm needs to be able to create \(sub\)tasks. These subtasks are responsible to execute the federated part of the algorithm. The central part of the algorithm can either be executed on the machine of the researcher or also on one of the nodes in the vantage6 network. In this example we only show the case in which one of the nodes executes the central part of the algorithm. The node provides the algorithm with a JWT token so that the central part of the algorithm has access to the server to post these subtasks.
+
+{% hint style="info" %}
+In this example the node uses a CSV-file as database 📔.  There are implementations that use traditional databases and triple stores. We expect to support these use cases better in the future.
+{% endhint %}
+
+### Package Structure
+
+The algorithm need to be structured as a [package](https://packaging.python.org/tutorials/packaging-projects/). This way the algorithm can be installed within the Docker image. The minimal file-structure would be:
+
+```bash
+project_folder
+├── Dockerfile
+├── setup.py
+└── algorithm_pkg
+    └── __init__.py
+```
+
+#### Dockerfile
+
+Contains the rece
 
 ### IO files and variables
 
