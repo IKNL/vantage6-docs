@@ -43,7 +43,6 @@
 
 * [Algorithm development status](algorithm-development/algorithm-development-status.md)
 * [Creating a New Algorithm](algorithm-development/create-new-algorithm.md)
-* [Creating a New \(Complex\) Algorithm](algorithm-development/creating-a-new-complex-algorithm.md)
 
 ## How to Contribute
 
