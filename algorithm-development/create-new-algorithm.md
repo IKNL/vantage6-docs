@@ -15,7 +15,7 @@ It is assumed that it is mathematically possible to create a federated version o
 
 ## 📝 The mathematical problem
 
-We want to now the average of column **X** from a dataset **Q** which contains **n** samples. Dataset **Q** is ****horizontally partitioned in dataset $$A = [a_1, a_2 ... a_j] = [q_1, q_2 ... q_j]$$ ****and $$B = [b_{1}, b_{2} ... b_k] = [q_{j+1}, q_{j+2}...q_{n}]$$ **.** The average of dataset **Q** is computed as:
+We want to now the average of column **X** from a dataset **Q** which contains **n** samples. Dataset **Q** is **horizontally partitioned in dataset** $$A = [a_1, a_2 ... a_j] = [q_1, q_2 ... q_j]$$ ****and $$B = [b_{1}, b_{2} ... b_k] = [q_{j+1}, q_{j+2}...q_{n}]$$ **.** The average of dataset **Q** is computed as:
 
 $$
 Q_{mean} = \frac{1}{n} \sum \limits_{i=1}^{n} {q_i} = \frac{q_1 + q_2 + ... + q_n}{n}
@@ -90,7 +90,6 @@ def central_part(node_outputs):
         global_count += output["count"]
 
     return {"average": global_sum / global_count}
-
 ```
 
 ### 🧪 Local testing
@@ -119,7 +118,7 @@ The algorithm consumes a file containing the input. This contains both the metho
 The central part of the algorithm needs to be able to create \(sub\)tasks. These subtasks are responsible to execute the federated part of the algorithm. The central part of the algorithm can either be executed on the machine of the researcher or also on one of the nodes in the vantage6 network. In this example we only show the case in which one of the nodes executes the central part of the algorithm. The node provides the algorithm with a JWT token so that the central part of the algorithm has access to the server to post these subtasks.
 
 {% hint style="info" %}
-In this example the node uses a CSV-file as database 📔.  There are implementations that use traditional databases and triple stores. We expect to support these use cases better in the future.
+In this example the node uses a CSV-file as database 📔. There are implementations that use traditional databases and triple stores. We expect to support these use cases better in the future.
 {% endhint %}
 
 ### 📂Package Structure
@@ -134,8 +133,7 @@ project_folder
     └── __init__.py
 ```
 
-We also recommend adding a `README.md`, `LICENSE` and `requirements.txt` to the project_folder.
-
+We also recommend adding a `README.md`, `LICENSE` and `requirements.txt` to the project\_folder.
 
 #### setup.py
 
@@ -172,10 +170,10 @@ setup(
 ```
 
 {% hint style="info" %}
-The `setup.py` above is sufficient in most cases. However if you want to do more advanced stuff (like adding static data, or a CLI) you can use the [extra arguments](https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args) from `setup`.
+The `setup.py` above is sufficient in most cases. However if you want to do more advanced stuff \(like adding static data, or a CLI\) you can use the [extra arguments](https://packaging.python.org/guides/distributing-packages-using-setuptools/#setup-args) from `setup`.
 {% endhint %}
 
-#### Dockerfile
+#### 🐳 Dockerfile
 
 Contains the recipe for building the Docker image. Typically you only have to change the argument `PKG_NAME` to the name of you package. This name should be the same as as the name you specified in the `setup.py`. In our case that would be `v6-average-py`.
 
@@ -204,25 +202,25 @@ CMD python -c "from vantage6.tools.docker_wrapper import docker_wrapper; docker_
 
 #### `__init__.py`
 
-This contains the code for your algorithm. It is possible to split this into multiple files, however the methods that should be available to the researcher should be in this file. You can do that by simply importing them into this file (e.g. `from .average import my_nested_method`)
+This contains the code for your algorithm. It is possible to split this into multiple files, however the methods that should be available to the researcher should be in this file. You can do that by simply importing them into this file \(e.g. `from .average import my_nested_method`\)
 
 We can distinguish two types of methods that a user can trigger:
 
 | name | description | prefix | arguments |
-| --- | --- | --- | --- |
-| master | Central part of the algorithm. Recieves a `client` as argument which provides an interface to the central server. This way the master can create tasks and collect their results. | | `(client, data, *args, **kwargs)`
-| Remote procedure call | Consumes the data at the node to compute the partial. | `RPC_` | `(data, *args, **kwargs)`
+| :--- | :--- | :--- | :--- |
+| master | Central part of the algorithm. Recieves a `client` as argument which provides an interface to the central server. This way the master can create tasks and collect their results. |  | `(client, data, *args, **kwargs)` |
+| Remote procedure call | Consumes the data at the node to compute the partial. | `RPC_` | `(data, *args, **kwargs)` |
 
 {% hint style="info" %}
 The `client` the master method receives is a `ContainerClient` which is different than the client you use as a user.
 {% endhint %}
-
 
 {% hint style="info" %}
 Everything that is behind a `return` statement is send back to the central server. This should never contain any privacy sensitive information
 {% endhint %}
 
 For our average algorithm the implementation will look as follows:
+
 ```python
 import time
 
@@ -319,16 +317,11 @@ def RPC_average_partial(data, column_name):
     }
 ```
 
+### 🏡 Local testing
 
-### Local testing
+Now that we have a vantage6 implementation of the algorithm it is time to test it. Before we run it into a vantage6 setup we can test it locally by using the `ClientMockProtocol` which simulates the communication with the central server.
 
-Now that we have a vantage6 implementation of the algorithm it is time to test
-it. Before we run it into a vantage6 setup we can test it locally by using the
-`ClientMockProtocol` which simulates the communication with the central server.
-
-Before we can locally test it we need to (editable) install the algorithm
-package so that the Mock client can use it. Simply move to the root directory
-of your algorithm package (with the `setup.py` file) and run the following:
+Before we can locally test it we need to \(editable\) install the algorithm package so that the Mock client can use it. Simply move to the root directory of your algorithm package \(with the `setup.py` file\) and run the following:
 
 ```bash
 pip install -e .
@@ -391,16 +384,17 @@ results = client.get_results(average_task.get("id"))
 print(results)
 ```
 
-### Building and Distributing
-Now that we have a full tested algorithm for the vantage6 infrastructure. We need to package it so that it can be distributed to the data-stations/nodes. Algorithms are delivered in Docker images. So that's where we need the `Dockerfile` for. To build an image from our algorithm (make sure you have docker installed and it's running) you can run the following command from the root directory of your algorithm project.
+### 🏗 Building and 🚛 Distributing
+
+Now that we have a full tested algorithm for the vantage6 infrastructure. We need to package it so that it can be distributed to the data-stations/nodes. Algorithms are delivered in Docker images. So that's where we need the `Dockerfile` for. To build an image from our algorithm \(make sure you have docker installed and it's running\) you can run the following command from the root directory of your algorithm project.
 
 ```bash
 docker build -t harbor2.vantage6.ai/demo/average .
 ```
 
-The option `-t` specifies the (unique) identifier used by the researcher to use this algorithm. Usually this includes the registry address (harbor2.vantage6.ai) and the project name (demo).
+The option `-t` specifies the \(unique\) identifier used by the researcher to use this algorithm. Usually this includes the registry address \(harbor2.vantage6.ai\) and the project name \(demo\).
 
-{% hint style='info' %}
+{% hint style="info" %}
 In case you are using docker hub as registry, you do not have to specify the registry or project as these are set by default to the Docker hub and your docker hub username.
 {% endhint %}
 
@@ -408,11 +402,11 @@ In case you are using docker hub as registry, you do not have to specify the reg
 docker push harbor2.vantage6.ai/demo/average
 ```
 
-{% hint style='info' %}
-Reach out to us on [Discord](https://discord.gg/yAyFf6Y) if you want to use our registries (harbor.vantage6.ai and harbor2.vantage6.ai).
+{% hint style="info" %}
+Reach out to us on [Discord](https://discord.gg/yAyFf6Y) if you want to use our registries \(harbor.vantage6.ai and harbor2.vantage6.ai\).
 {% endhint %}
 
-## Cross-language serialization
+## 🤞 Cross-language serialization
 
 It is possible that a vantage6 algorithm is developed in one programming language, but you would like to run the task from another language. For these kinds of usecases the python algorithm wrapper and client support cross-language serialization. By default input to the algorithms and output back to the client are serialized using pickle. However, it is possible to define a different serialization format.
 
@@ -431,3 +425,4 @@ client.post_task(
     }
 )
 ```
+
