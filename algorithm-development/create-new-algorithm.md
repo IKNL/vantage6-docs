@@ -290,9 +290,9 @@ def master(client, data, column_name):
     # Now we can combine the partials to a global average.
     global_sum = 0
     global_count = 0
-    for output in node_outputs:
-        global_sum += output["sum"]
-        global_count += output["count"]
+    for result in results:
+        global_sum += result["sum"]
+        global_count += result["count"]
 
     return {"average": global_sum / global_count}
 
@@ -371,12 +371,13 @@ average_partial_task = client.create_new_task(
 # You can directly obtain the result (we dont have to wait for nodes to
 # complete the tasks)
 results = client.get_results(average_partial_task.get("id"))
+print(results)
 
 # To trigger the master method you also need to supply the `master`-flag
 # to the input. Also note that we only supply the task to a single organization
 # as we only want to execute the central part of the algorithm once. The master
 # task takes care of the distribution to the other parties.
-average_partial_task = client.create_new_task(
+average_task = client.create_new_task(
     input_={
         'master': 1,
         'method':'master',
@@ -386,6 +387,8 @@ average_partial_task = client.create_new_task(
     },
     organization_ids=[org_ids[0]]
 )
+results = client.get_results(average_task.get("id"))
+print(results)
 ```
 
 ### Building and Distributing
