@@ -6,6 +6,10 @@ description: >-
 
 # Creating a New Algorithm
 
+{% hint style="success" %}
+The final code of this tutorial is published on [Github](%20https://github.com/iknl/v6-average-py). The algorithm is also published in our Docker registry: _harbor2.vantage6.ai/demo/average_
+{% endhint %}
+
 It is assumed that it is mathematically possible to create a federated version of the algorithm you want to use. In the following sections we create a federated algorithm to compute the average of a distributed dataset. An overview of the steps that we are going though:
 
 1. Mathematically decompose the model
