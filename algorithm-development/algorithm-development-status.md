@@ -21,6 +21,9 @@
 | Proportion  |          |        |              |
 | Odds ratio  |          |        |              |
 | Hessian Matrix |  🏗        |        | Python     |
+| Propensity Score Stratification |  ✅        |        | R     |
+| Age Standerdized Incidence Rate |  ✅        |        | Python   |
+
 
 ### Visualization
 
@@ -32,6 +35,7 @@
 | Scatter plot |         |         |              |
 | Box plot    |          |         |              |
 | Violin plot |          |         |              |
+
 
 ### Hypothesis tests
 
@@ -46,12 +50,14 @@
 | Log-Rank test |        |          |             |
 | Wald test |            |          |             |
 
+
 ### Variable selection
 
 | Description | Horizontal | Vertical | Language |
-| :---        | :---       | :---     | :---         |
+| :---        | :---       | :---     | :---     |
 | AIC         |          |         |             |
 | Likelihood Ratio test |  |       |              |
+
 
 ### Models
 
@@ -62,11 +68,12 @@
 | GLM         | ✅        |         | R            |
 | GLMM        | 🏗         |        |              |
 
+
 ### Survival models
 
 | Description | Horizontal | Vertical | Language  |
-| :---        | :---       | :---     | :---          |
+| :---        | :---       | :---     | :---       |
 | Kaplan Meier |         |         |              |
-| Cox Proportional Hazards regression | ✅ |  | R  |
-| Partial Likelihood estimates  |  |  |           |
+| Cox Proportional Hazards Regression | ✅ |  | R  |
+| Partial Likelihood Estimates  |  |  |           |
 
