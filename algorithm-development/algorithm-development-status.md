@@ -17,6 +17,8 @@
 | Proportion |  |  |  |
 | Odds ratio |  |  |  |
 | Hessian Matrix | 🏗 |  | Python |
+| Propensity Score Stratification | ✅ |  | R |
+| Age Standardized Incidence Rate | ✅ |  | Python |
 
 ## Visualization
 
@@ -56,13 +58,13 @@
 | Linear Regression | ✅ |  | R |
 | Logistic Regression | ✅ |  | R |
 | GLM | ✅ |  | R |
-| GLMM | 🏗 |  |  |
+| GLMM | 🏗 |  | R |
 
 ## Survival models
 
 | Description | Horizontal | Vertical | Language |
 | :--- | :--- | :--- | :--- |
 | Kaplan Meier |  |  |  |
-| Cox Proportional Hazards regression | ✅ |  | R |
-| Partial Likelihood estimates |  |  |  |
+| Cox Proportional Hazards Regression | ✅ |  | R |
+| Partial Likelihood Estimates |  |  |  |
 
