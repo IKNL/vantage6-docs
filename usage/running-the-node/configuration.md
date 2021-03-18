@@ -140,3 +140,16 @@ application:
   ...
 ```
 
+### 📃 Extra Environment Variables \[2.0.1+\]
+
+It is possible to define additional environment variables for the algorithm containers. For example, this could be useful for sharing credentials for accessing a data-store.
+
+```yaml
+application:
+    ...
+    algorithm_env:
+        var1: value1
+        var2: 2
+    ...
+```
+
