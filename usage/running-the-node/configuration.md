@@ -94,6 +94,7 @@ application:
 | `allowed_images` | List of [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) that control which algorithms are allowed on this node. See [here](configuration.md#allowed-images) for more detail. |
 | `databases` | List of databases in `key`:`value` pair \(💔 broken in current version. Will be fixed in a future release, only the default database can be used.\) |
 | `logging` | `file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter).  `level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels).  `use_console`: whenever the output needs to be shown in the console |
+| `algorithm_env` | List of additional environment variables you want to provide to the algorithm containers. See [here](https://app.gitbook.com/@vantage6/s/vantage6/~/drafts/-MW3WGlJQBsVFTFQ_9md/usage/running-the-node/configuration#extra-environment-variables-2-0-1) for more detail. |
 
 ### 🔒 Encryption
 
