@@ -9,6 +9,7 @@ description: The Harukas release notes
 * **Feature**
   * Custom algorithm environment variables can be set using the `algorithm_env` key in the configuration file. [See this Github issue](https://github.com/IKNL/vantage6-node/issues/32).
   * Support for non-file-based databases on the node. [See this Github issue](https://github.com/IKNL/vantage6/issues/66). 
+  * Added flag `--attach` to the `vserver start` and `vnode start` command. This directly attaches the log to the console.
   * Auto updating the node and server instance is now limited to the major version. [See this Github issue](https://github.com/IKNL/vantage6/issues/65).
     * e.g. if you've installed the Trolltunga version of the CLI you will always get the Trolltunga version of the node and server.
     * Infrastructure images are now tagged using their version major. \(e.g. `trolltunga` or `harukas` \)
