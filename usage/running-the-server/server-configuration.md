@@ -22,8 +22,10 @@ To update a configuration you need to modify the created YAML file. To see where
 **Node and server on the same machine**  
 The challenge is that the node can reach \(find\) the server. This is only difficult when using the dockerized node, and differs per operating system.
 
-**Windows and Mac**  
-Setting the server `ip` to `127.0.0.1` makes the server reachable at your localhost \(even when the dockerized version is used\). In order for the node to reach this server, set the `server_url` to `host.docker.internal`. 
+**Windows and \(intel\) Mac**  
+Setting the server `ip` to `127.0.0.1` makes the server reachable at your localhost \(this is also the case when the dockerized version is used\). In order for the node to reach this server, set the `server_url` to `host.docker.internal`. 
+
+⚠ On the **M1** mac the local server might not  reachable from your nodes as `host.docker.internal` does not seem to refer to the host machine. Reach out to us on Discord for a solution if you need this!
 
 **Linux**  
 You should bind the server to the network interface, this ip is reachable from within docker \(thus from the node\)
@@ -37,9 +39,9 @@ While it's technically possible to store the configuration files anywhere on you
 
 | OS | System | User |
 | :--- | :--- | :--- |
-| Windows | `C:\ProgramData\vantage\server` | `C:\Users\<user>\AppData\Local\vantage\server\` |
-| MacOS | `/Library/Application Support/vantage/server/` | `/Users/<user>/Library/Application Support/vantage/server/` |
-| Ubuntu | `/etc/xdg/vantage/server/` | `~/.config/vantage/server/` |
+| Windows | `C:\ProgramData\vantage6\server` | `C:\Users\<user>\AppData\Local\vantage6\server\` |
+| MacOS | `/Library/Application Support/vantage6/server/` | `/Users/<user>/Library/Application Support/vantage6/server/` |
+| Ubuntu | `/etc/xdg/vantage6/server/` | `~/.config/vantage6/server/` |
 
 ## 🗃 Configuration File Structure
 
@@ -97,6 +99,7 @@ environments:
 | `uri` | The URI to the database. This should be a valid SQLAlchemy URI, See [here](https://docs.sqlalchemy.org/en/latest/core/engines.html#database-urls) for more information. \(e.g. for an Sqlite database: `sqlite:///database-name.sqlite`, or Postgres `postgresql://username:password@172.17.0.1/database`. |
 | `allow_drop_all` | This should be set to `false` in production❗ as this allows to completely wipe the database in a single command. Useful to set to `true` when testing/developing. |
 | `logging` |  `file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler) `format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter). `level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels) `use_console`: whenever the output needs to be shown in the console |
+| `smtp` | Configure a mail server for the server to use for administrative purposes. e.g. allowing users to reset their password. See section bellow for more deals. |
 
 See [Configuration File Structure](server-configuration.md#-configuration-file-structure) for example values.
 
