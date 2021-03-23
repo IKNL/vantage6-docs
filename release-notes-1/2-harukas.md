@@ -4,7 +4,7 @@ description: The Harukas release notes
 
 # 2 Harukas
 
-## 2.0.1
+## 2.1.0
 
 * **Feature**
   * Custom algorithm environment variables can be set using the `algorithm_env` key in the configuration file. [See this Github issue](https://github.com/IKNL/vantage6-node/issues/32).
