@@ -109,13 +109,15 @@ Users \(always\) belong to an organization. So if you have not created an organi
 # first otain the organization to which the new user belongs
 org = db.Organization.get_by_name("IKNL")
 
-# create the new users
+# create the new users, see section Roles and Rules on how to 
+# deal with permissions
 new_user = db.User(
     username="root",
     password="super-secret",
     firstname="John", 
     lastname="Doe", 
-    roles="root",
+    roles=[],
+    rules=[],
     organization=org
 )
 
