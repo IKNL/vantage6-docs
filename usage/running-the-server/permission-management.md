@@ -31,7 +31,7 @@ There are a few pre-defined roles.
 
 The server administrator can assign rules and roles through the [iPython shell](shell.md). Other users can use API to assign roles/rules that they own to other users.
 
-First we need to initialize the client
+First we need to initialize the client:
 
 {% tabs %}
 {% tab title="Python" %}
