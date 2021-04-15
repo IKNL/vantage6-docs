@@ -187,7 +187,7 @@ role = db.Role(name="role-name", rules=[rule])
 rol.save()
 
 # or assign the rule directly to the user
-user = db.User.getByUsername("some-existing-username")
+user = db.User.get_by_username("some-existing-username")
 user.rules.append(rule)
 user.save()
 ```
