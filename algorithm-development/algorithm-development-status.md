@@ -39,7 +39,7 @@
 | Chi-square | ✅ |  | R |
 | Z-test |  |  |  |
 | ANOVA | 🏗 |  | Python |
-| Fisher's Exact test | ✅ |  | R |
+| Fisher's Exact test | 🏗 |  | Python |
 | Pearson Correlation |  |  |  |
 | Log-Rank test |  |  |  |
 | Wald test |  |  |  |
