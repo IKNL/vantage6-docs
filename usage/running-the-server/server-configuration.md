@@ -122,17 +122,3 @@ prod:
     ...
 ```
 
-###  🔏 VPN server \[3+\]
-
-{% hint style="warning" %}
-The VPN server is required when algorithms need to directly communicate with each other. If disabled algorithms that depend on this feature will not work. 
-{% endhint %}
-
-```yaml
-
-```
-
-### 
-
-
-
