@@ -122,5 +122,24 @@ prod:
     ...
 ```
 
+###  🔏 VPN server \[3+\]
+
+{% hint style="warning" %}
+The VPN server is required when algorithms need to directly communicate with each other. If disabled algorithms that depend on this feature will not work. 
+{% endhint %}
+
+```yaml
+prod: 
+    ...
+    vpn_server:
+        client_id: 1  # VPN server client id
+        url: https://your-vpn-server.ext  # the URL of your VPN server
+        redirect_url: ...
+        client_secret: ...
+    ... 
+```
+
+### 
+
 
 

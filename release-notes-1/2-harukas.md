@@ -4,6 +4,12 @@ description: The Harukas release notes
 
 # 2 Harukas
 
+## 2.1.1
+
+* **Bugfix**
+  * Updating the country field in an organization works again\
+  * The `client.result.list(...)` broke when it was not able to deserialize one of the in- or outputs.
+
 ## 2.1.0
 
 * **Feature**
