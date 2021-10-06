@@ -4,6 +4,11 @@ description: The Harukas release notes
 
 # 2 Harukas
 
+## 2.1.2 and 2.1.3
+
+* **Bugfix**
+  * Changes to the way the application interacts with the database. Solves the issue of unexpected disconnects from the DB and thereby freezing the application.
+
 ## 2.1.1
 
 * **Bugfix**
