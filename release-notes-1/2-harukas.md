@@ -4,6 +4,18 @@ description: The Harukas release notes
 
 # 2 Harukas
 
+## 2.2.0
+
+* **Feature**
+  * Multi-database support for nodes. It is now possible to assign multiple data sources to a single node. The user can request a specific data source by supplying the _database_ argument when creating a task.&#x20;
+  * The mailserver now supports TLS and SSL options
+* **Bugfix**
+  * Nodes are now disconnected more gracefully. This fixes the issue that nodes appear offline while they are in fact online
+  * Fixed a bug that prevented deleting a node from the collaboration
+  * A role is now allowed to have zero rules
+  * Some http error messages have improved
+  * Organization fields can now be set to an empty string
+
 ## 2.1.2 and 2.1.3
 
 * **Bugfix**
@@ -12,19 +24,19 @@ description: The Harukas release notes
 ## 2.1.1
 
 * **Bugfix**
-  * Updating the country field in an organization works again\
+  * Updating the country field in an organization works again\\
   * The `client.result.list(...)` broke when it was not able to deserialize one of the in- or outputs.
 
 ## 2.1.0
 
 * **Feature**
   * Custom algorithm environment variables can be set using the `algorithm_env` key in the configuration file. [See this Github issue](https://github.com/IKNL/vantage6-node/issues/32).
-  * Support for non-file-based databases on the node. [See this Github issue](https://github.com/IKNL/vantage6/issues/66). 
+  * Support for non-file-based databases on the node. [See this Github issue](https://github.com/IKNL/vantage6/issues/66).&#x20;
   * Added flag `--attach` to the `vserver start` and `vnode start` command. This directly attaches the log to the console.
   * Auto updating the node and server instance is now limited to the major version. [See this Github issue](https://github.com/IKNL/vantage6/issues/65).
     * e.g. if you've installed the Trolltunga version of the CLI you will always get the Trolltunga version of the node and server.
-    * Infrastructure images are now tagged using their version major. \(e.g. `trolltunga` or `harukas` \)
-    * It is still possible to use intermediate versions by specifying the `--image` option when starting the node or server. \(e.g. `vserver start --image harbor.vantage6.ai/infrastructure/server:2.0.0.post1` \)
+    * Infrastructure images are now tagged using their version major. (e.g. `trolltunga` or `harukas` )
+    * It is still possible to use intermediate versions by specifying the `--image` option when starting the node or server. (e.g. `vserver start --image harbor.vantage6.ai/infrastructure/server:2.0.0.post1` )
 * **Bugfix**
   * Fixed issue where node crashed if the database did not exist on startup. [See this Github issue](https://github.com/IKNL/vantage6/issues/67).
 
@@ -38,12 +50,11 @@ description: The Harukas release notes
 * **Feature**
   * Role/rule based access control
     * Roles consist of a bundle of rules. Rules profided access to certain API endpoints at the server.
-    * By default 3 roles are created: 1\) Container, 2\) Node, 3\) Root. The root role is assigned to the root user on the first run. The root user can assign rules and roles from there.
-  * Major update on the _python_-client. The client also contains management tools for the server \(i.e. to creating users, organizations and managing permissions. The client can be imported from `from vantage6.client import Client` . 
+    * By default 3 roles are created: 1) Container, 2) Node, 3) Root. The root role is assigned to the root user on the first run. The root user can assign rules and roles from there.
+  * Major update on the _python_-client. The client also contains management tools for the server (i.e. to creating users, organizations and managing permissions. The client can be imported from `from vantage6.client import Client` .&#x20;
   * You can use the agrument `verbose` on the client to output status messages. This is usefull for example when working with Jupyter notebooks.
   * Added CLI `vserver version` , `vnode version` , `vserver-local version` and `vnode-local version` commands to report the version of the node or server they are running
   * The logging contains more information about the current setup, and refers to this documentation and our Discourd channel
-  * 
-*  **Bugfix**
+  *
+* &#x20;**Bugfix**
   * Issue with the DB connection. Session management is updated. Error still occurs from time to time but can be reset by using the endpoint `/health/fix` . This will be patched in a newer version.
-

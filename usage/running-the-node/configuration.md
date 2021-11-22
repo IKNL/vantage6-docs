@@ -1,34 +1,31 @@
 ---
-description: In this section you will learn how to configure and run the node(s).
+description: In this section you will learn how to (re-)configure a nod
 ---
 
-# Configuration
+# 📃 Configure
 
-## Options
+When creating a new node you can use the command line or create the YAML configuration file manually. In case you want to reconfigure a node you need to edit the YAML file.&#x20;
 
-Configuration of the server can be done either through the command line or by creating a custom YAML configuration file. Both options will be detailed below.
-
-## 🧙 Configure using the Wizard
+## :mage: Configure using the Wizard
 
 The most straight forward way of creating a new server configuration is using the command `vnode new` which allows you to configure the most basic settings.
 
-![](../../.gitbook/assets/vnodenew%20%281%29.jpg)
+![](<../../.gitbook/assets/vnodenew (1).jpg>)
 
-By default the node configuration file is stored at user level, which isolates this configuration from other users. In case you want this configuration to be available for all users, simply add the `--system` flag \(make sure you have sufficient rights to do this\).
+By default the node configuration file is stored at user level, which isolates this configuration from other users. In case you want this configuration to be available for all users, simply add the `--system` flag when you invoke `vnode new`.
 
 {% hint style="info" %}
 To update a configuration you need to modify the created YAML file. To see where this file is located you can use the command `vnode files` . Do not forget to specify the `--system` flag in the case of a system-wide configuration.
 {% endhint %}
 
-## 👩🔬 Configure using a custom YAML file
+## Create / Edit configuration file
 
-The configuration wizard outputs a YAML file which can be loaded into VANTAGE6. It is also possible to create this file yourself, to see [Configuration File Structure](./#configuration-file-structure) or an example on our [github](https://github.com/iknl/ppdli) page. This file can be stored \(and referred to\) at any location at the machine, although it recommended to use either the VANTAGE6 system or user folder. These folders are different per operating system.
+The configuration wizard outputs a YAML file which can be loaded into vantage6. It is also possible to create this file yourself, to see [Configuration File Structure](./#configuration-file-structure) or an example on our [github](https://github.com/iknl/ppdli) page. This file can be stored (and referred to) at any location at the machine, although it recommended to use either the vantage6 system or user folder. These folders are different per operating system.
 
-| Operating System | System-folder | User-folder |
-| :--- | :--- | :--- |
-| Windows | C:\ProgramData\vantage\node | C:\Users\&lt;user&gt;\AppData\Local\vantage\node |
-| MacOS | /Library/Application Support/vantage6/node | /Users/&lt;user&gt;/Library/Application Support/vantage6/node |
-| Linux | /etc/vantage/node | /home/&lt;user&gt;/.config/vantage/node |
+| Windows | C:\ProgramData\vantage6\node               | C:\Users\\\<user>\AppData\Local\vantage6\node            |
+| ------- | ------------------------------------------ | -------------------------------------------------------- |
+| MacOS   | /Library/Application Support/vantage6/node | /Users/\<user>/Library/Application Support/vantage6/node |
+| Linux   | /etc/vantage6/node                         | /home/\<user>/.config/vantage6/node                      |
 
 {% hint style="info" %}
 To start a node using a configuration file at an arbitrary location you should use the config option:`vnode start --config /path/to/config.yaml` note that this will overwrite all other options.
@@ -36,10 +33,10 @@ To start a node using a configuration file at an arbitrary location you should u
 
 ## 🗃 Configuration File Structure
 
-Similar to the server, each node instance \(configuration\) can have multiple environments. You can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .
+Similar to the server, each node instance (configuration) can have multiple environments. You can specify these under the key `environments` which allows four types: `dev` , `test`,`acc` and `prod` .
 
 {% hint style="info" %}
-We use [DTAP for key environments](https://en.wikipedia.org/wiki/Development,_testing,_acceptance_and_production). In short:
+We use [DTAP for key environments](https://en.wikipedia.org/wiki/Development,\_testing,\_acceptance\_and\_production). In short:
 
 * `dev` Development environment. It is ok to break things here
 * `test` Testing environment. Here, you can verify that everything works as expected. This environment should resemble as much as possible the target environment where the final solution will be deployed.
@@ -82,19 +79,19 @@ application:
 
 ## 📰 Parameter description
 
-| Parameter | Details |
-| :--- | :--- |
-| `api_key` | API key used to authenticate at the server. |
-| `server_url` | URL of the vantage6 server. |
-| `port` | Port of the vantage6 server. Should be `443` in most cases. |
-| `api_path` | Path of the API. Usually empty or `/api`. |
-| `task_dir` | Local task directory name |
-| `encryption` | Section that contains encryption settings:  `enabled`: Boolean to indicate whenever encryption is used or not. `private_key`: path to private key file.   See [here](configuration.md#encryption) for more details. |
-| `docker_registries` | Section that contains  a list Docker registry login credentials:  `registry`: url of the docker registry `username`: username `password`: password  See [here](configuration.md#docker-login) for more detail. |
-| `allowed_images` | List of [regular expressions](https://en.wikipedia.org/wiki/Regular_expression) that control which algorithms are allowed on this node. See [here](configuration.md#allowed-images) for more detail. |
-| `databases` | List of databases in `key`:`value` pair \(💔 broken in current version. Will be fixed in a future release, only the default database can be used.\) |
-| `logging` | `file`: filename of the log-file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `backup_count`: the number of log files that are kept, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `max_size`: size kb of a single log file, used by [RotatingFileHandler](https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler)  `format`: input for `logging.Formatter`, see [here](https://docs.python.org/3/library/logging.html#logging.Formatter).  `level`: debug level used, see [here](https://docs.python.org/3/library/logging.html#logging-levels).  `use_console`: whenever the output needs to be shown in the console |
-| `algorithm_env` | List of additional environment variables you want to provide to the algorithm containers. See [here](https://app.gitbook.com/@vantage6/s/vantage6/~/drafts/-MW3WGlJQBsVFTFQ_9md/usage/running-the-node/configuration#extra-environment-variables-2-0-1) for more detail. |
+| Parameter           | Details                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_key`           | API key used to authenticate at the server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `server_url`        | URL of the vantage6 server.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `port`              | Port of the vantage6 server. Should be `443` in most cases.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `api_path`          | Path of the API. Usually empty or `/api`.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `task_dir`          | Local task directory name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `encryption`        | <p>Section that contains encryption settings: <br><code>enabled</code>: Boolean to indicate whenever encryption is used or not. <code>private_key</code>: path to private key file. <br> See <a href="configuration.md#encryption">here</a> for more details.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `docker_registries` | <p>Section that contains  a list Docker registry login credentials: <br><code>registry</code>: url of the docker registry<br><code>username</code>: username<br><code>password</code>: password <br>See <a href="configuration.md#docker-login">here</a> for more detail.</p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `allowed_images`    | List of [regular expressions](https://en.wikipedia.org/wiki/Regular\_expression) that control which algorithms are allowed on this node. See [here](configuration.md#allowed-images) for more detail.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| `databases`         | List of databases in `key`:`value` pair (💔 broken in current version. Will be fixed in a future release, only the default database can be used.)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `logging`           | <p><code>file</code>: filename of the log-file, used by <a href="https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler">RotatingFileHandler</a> <br><code>backup_count</code>: the number of log files that are kept, used by <a href="https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler">RotatingFileHandler</a> <br><code>max_size</code>: size kb of a single log file, used by <a href="https://docs.python.org/3/library/logging.handlers.html#logging.handlers.RotatingFileHandler">RotatingFileHandler</a> <br><code>format</code>: input for <code>logging.Formatter</code>, see <a href="https://docs.python.org/3/library/logging.html#logging.Formatter">here</a>. <br><code>level</code>: debug level used, see <a href="https://docs.python.org/3/library/logging.html#logging-levels">here</a>. <br><code>use_console</code>: whenever the output needs to be shown in the console</p> |
+| `algorithm_env`     | List of additional environment variables you want to provide to the algorithm containers. See [here](https://app.gitbook.com/@vantage6/s/vantage6/\~/drafts/-MW3WGlJQBsVFTFQ\_9md/usage/running-the-node/configuration#extra-environment-variables-2-0-1) for more detail.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ### 🔒 Encryption
 
@@ -112,12 +109,12 @@ application:
 To generate a new private key and upload the public key to the server you can use the command `vnode create-private-key`. You can also generate the key yourself and upload it by using the `/organization/<id>` endpoint.
 
 {% hint style="info" %}
-Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible \(yet\) to create an unique private key for each node you own.
+Note that public keys are managed at organization level, meaning that you only can use one private key for all your nodes. It is not possible (yet) to create an unique private key for each node you own.
 {% endhint %}
 
 ### 🏳 Allowed Images
 
-To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid [regular expression](https://en.wikipedia.org/wiki/Regular_expression).
+To control which algorithms are allowed at the node you can set the `allowed_images` key in the configuration file. This is expected to be a valid [regular expression](https://en.wikipedia.org/wiki/Regular\_expression).
 
 ```yaml
 application:
@@ -141,7 +138,7 @@ application:
   ...
 ```
 
-### 📃 Extra Environment Variables \[2.0.1+\]
+### 📃 Extra Environment Variables \[2.0.1+]
 
 It is possible to define additional environment variables for the algorithm containers. For example, this could be useful for sharing credentials for accessing a data-store.
 
@@ -153,4 +150,3 @@ application:
         var2: 2
     ...
 ```
-
