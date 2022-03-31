@@ -19,5 +19,5 @@ docker run hello-world
 {% endhint %}
 
 {% hint style="warning" %}
-Note that for Linux, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) may be required. Vantage6 runs docker without `sudo`, and these steps set up docker such that this is allowed.
+Note that for Linux, some [post-installation steps](https://docs.docker.com/engine/install/linux-postinstall/) may be required. Vantage6 needs to be able to run docker without `sudo`, and these steps ensure just that.
 {% endhint %}
