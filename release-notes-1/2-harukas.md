@@ -4,10 +4,17 @@ description: The Harukas release notes
 
 # 2 Harukas
 
+## 2.3.0
+
+* **Feature**
+  * Supporting horizontal scaling of the vantage6-server by allowing to set a RabbitMQ service
+* **Bugfix**
+  * Improved the speed of the `/organization` endpoint
+
 ## 2.2.0
 
 * **Feature**
-  * Multi-database support for nodes. It is now possible to assign multiple data sources to a single node. The user can request a specific data source by supplying the _database_ argument when creating a task.&#x20;
+  * Multi-database support for nodes. It is now possible to assign multiple data sources to a single node. The user can request a specific data source by supplying the _database_ argument when creating a task
   * The mailserver now supports TLS and SSL options
 * **Bugfix**
   * Nodes are now disconnected more gracefully. This fixes the issue that nodes appear offline while they are in fact online
