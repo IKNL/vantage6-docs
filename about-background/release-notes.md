@@ -44,6 +44,13 @@
   * Fix node status when node is stopped and immediately started up
   * Check if node names are allowed docker names
 
+## 2.3.0 - 2.3.4
+
+* **Feature**&#x20;
+  * Allows for horizontal scaling of the server instance by adding support for RabbitMQ. Note that this has not been released for version 3(!)
+* **Bugfix**
+  * Performance improvements on the `/organization` endpoint
+
 ## 2.2.0
 
 * **Feature**
