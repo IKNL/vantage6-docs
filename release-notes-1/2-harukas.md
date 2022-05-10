@@ -4,6 +4,13 @@ description: The Harukas release notes
 
 # 2 Harukas
 
+## 2.3.0 - 2.3.4
+
+* **Feature**&#x20;
+  * Allows for horizontal scaling of the server instance by adding support for RabbitMQ. Note that this has not been released for version 3(!)
+* **Bugfix**
+  * Performance improvements on the `/organization` endpoint
+
 ## 2.3.0
 
 * **Feature**
