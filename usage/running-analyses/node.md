@@ -3,7 +3,7 @@ description: In this section, you will learn how to use the client to register a
 ---
 # Registering a node
 
-Here, we assume that you have a Python session with an authenticated Client object, as created in [authentication](authenticate.md).
+Here, we assume that you have a Python session with an authenticated Client object, as created in [authentication](authentication.md).
 
 A node is assocated with both a collaboration and an organization see [Concepts](../preliminaries.md#concepts). You will need to find the collaboration and organization id's for the node you want to register:
 
