@@ -4,18 +4,22 @@
 
 * **Feature**
   * Horizontal scaling for the vantage6-server instance by adding support for RabbitMQ.
+  * It is now possible to connect other docker containers to the private algorithm network. This enables you to attach services to the algorithm network using the `docker_services` setting.
+  * Many additional select and filter options on API endpoints, see swagger docs endpoint (`/apidocs`). The new options have also been added to the Python client.
   * Users are now always able to view their own data
-  * Now it is possible to connect other docker containers to the private algorithm network. This enables you to attach services to the algorithm network using the `docker_services` setting.
   * Usernames can be changed though the API
-  * Many additional select and filter options on API endpoints, see swagger docs `/apidocs`
 * **Bugfix**
   * (Confusing) SQL errors are no longer returned from the API.
   * Clearer error message when an organization has multiple nodes for a single collaboration.
   * Node no longer tries to connect to the VPN if it has no `vpn_subnet` setting in its configuration file.
-  * Superusers are no longer able to post tasks to collaborations its organization does not participate in.
+  * Fix the VPN configuration file renewal
+  * Superusers are no longer able to post tasks to collaborations its organization does not participate in. Note that superusers were never able to view the results of such tasks.
   * It is no longer possible to post tasks to organization which do not have a registered node attach to the collaboration.
   * The `vnode create-private-key` command no longer crashes if the ssh directory does not exist.
   * The client no longer logs the password
+  * The version of the `alpine` docker image (that is used to set up algorithm runs with VPN) was fixed. This prevents that many versions of this image are downloaded by the node.
+  * Improved reading of username and password from docker registry, which can be capitalized differently depending on the docker version.
+  * Fix error with multiple-database feature, where default is now used if specific database is not found
 
 ## 3.1.0
 
