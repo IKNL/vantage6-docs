@@ -5,7 +5,7 @@ description: In this section, you will learn how to use the client to create a n
 
 Here, we assume that you have a Python session with an authenticated Client object, as created in [authentication](authentication.md). We also assume that you have a login on the Vantage6 server that has administrative rights, otherwise, you will not be able to create a new organization.
 
-The first, optional step, is to create an RSA keypair. A keypair, consisting of a private and a public key, can be used to encrypt data transfers. Users from the organization you are about to create will only be able to use encryption if such a keypair has been set up and if they have access to the private key.
+The first (optional, but recommended) step is to create an RSA keypair. A keypair, consisting of a private and a public key, can be used to encrypt data transfers. Users from the organization you are about to create will only be able to use encryption if such a keypair has been set up and if they have access to the private key.
 
 ```python
 from vantage6.common import (warning, error, info, debug, bytes_to_base64s, check_config_write_permissions)
