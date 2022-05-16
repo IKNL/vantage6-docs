@@ -1,5 +1,22 @@
 # Release notes
 
+## 3.2.0
+
+* **Feature**
+  * Horizontal scaling for the vantage6-server instance by adding support for RabbitMQ.
+  * Users are now always able to view their own data
+  * Now it is possible to connect other docker containers to the private algorithm network. This enables you to attach services to the algorithm network using the `docker_services` setting.
+  * Usernames can be changed though the API
+  * Many additional select and filter options on API endpoints, see swagger docs `/apidocs`
+* **Bugfix**
+  * (Confusing) SQL errors are no longer returned from the API.
+  * Clearer error message when an organization has multiple nodes for a single collaboration.
+  * Node no longer tries to connect to the VPN if it has no `vpn_subnet` setting in its configuration file.
+  * Superusers are no longer able to post tasks to collaborations its organization does not participate in.
+  * It is no longer possible to post tasks to organization which do not have a registered node attach to the collaboration.
+  * The `vnode create-private-key` command no longer crashes if the ssh directory does not exist.
+  * The client no longer logs the password
+
 ## 3.1.0
 
 * **Feature**
