@@ -53,7 +53,9 @@ environments:
     # Port to which the server binds
     port: 5000
     
-    # API path prefix. (i.e. https://yourdomain.org/api_path/<endpoint>)
+    # API path prefix. (i.e. https://yourdomain.org/api_path/<endpoint>). In the
+    # case you use a referse proxy and use a subpath, make sure to include it 
+    # here also.
     api_path: /api
     
     # The URI to the server database. This should be a valid SQLAlchemy URI, 

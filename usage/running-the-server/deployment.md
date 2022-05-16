@@ -23,19 +23,20 @@ Below a basic setup. Note that SSL is not configured in this example.
 ```nginx
 server {
     
-    # public port 
+    # Public port 
     listen 80;
     server_name _;
 
-    # vantage6-server 
-    location / {
+    # vantage6-server. In the case you use a sub-path here, make sure
+    # to foward also it to the proxy_pass
+    location /subpath {
         include proxy_params;
         
         # internal ip and port 
-        proxy_pass http://127.0.0.1:5000;
+        proxy_pass http://127.0.0.1:5000/subpath;
     }
     
-    # allow the websocket traffic
+    # Allow the websocket traffic
     location /socket.io {
         include proxy_params;
         proxy_http_version 1.1;
@@ -46,6 +47,10 @@ server {
     }
 }
 ```
+
+{% hint style="info" %}
+When you [server-configuration.md](server-configuration.md "mention") the server, make sure to include the `/subpath` that has been set in the NGINX configuration into the `api_path` setting (e.g. `api_path: /subpath/api`)&#x20;
+{% endhint %}
 
 ## Azure app service&#x20;
 
