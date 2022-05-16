@@ -20,7 +20,7 @@ password = "MY PASSWORD"
 organization_key = "FILEPATH TO MY PRIVATE KEY" # This can be empty if you do not want to set up encryption
 ```
 
-Note that the organization_key should be a filepath that points to the private key that was generated when the organization to which your login belongs was first created (see [Creating an organization](organization.md).
+Note that the organization_key should be a filepath that points to the private key that was generated when the organization to which your login belongs was first created (see [Creating an organization](organization.md)).
 
 Then, we connect to the vantage 6 server by initializing a Client object, and authenticating
 ```python
