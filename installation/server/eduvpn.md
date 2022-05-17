@@ -4,9 +4,7 @@ description: The only VPN that is currently compatible
 
 # EduVPN
 
-_Please note that EduVPN is an **optional** component. It enables the use of advanced algorithms that require node-to-node communication. Most algorithms will work without it._
-
-[EduVPN ](https://www.eduvpn.org/)provides an API for the OpenVPN server, which is required for automated certificate retrieval by the nodes. Like vantage6, it is an open source platform.&#x20;
+[EduVPN ](https://www.eduvpn.org)provides an API for the OpenVPN server, which is required for automated certificate retrieval by the nodes. Like vantage6, it is an open source platform.&#x20;
 
 {% hint style="info" %}
 We are considering to eliminate the need for an EduVPN server by implementing a vantage6 API for OpenVPN.
