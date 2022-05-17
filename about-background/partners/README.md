@@ -1,6 +1,6 @@
 # Partners
 
-**Contact us via the** [**Discourse** ](https://vantage6.discourse.group/)**forum!**&#x20;
+**Contact us via the** [**Discourse** ](https://vantage6.discourse.group)**forum!**&#x20;
 
 ![](<../../.gitbook/assets/iknl-logo (1).jpg>)
 
@@ -21,4 +21,4 @@
 
 * Johan van Soest
 
-**Would you like to contribute? Check out our** [**Github**](https://github.com/vantage6/vantage6)**!**
+**Would you like to contribute? Check out our** [**Github**](https://github.com/IKNL/vantage6-master)**!**
