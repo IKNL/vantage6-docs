@@ -7,8 +7,14 @@ description: In this section we'll explain how to deploy a vantage6 server.
 vantage6 uses Flask as backbone, together with flask-socketio for websocket support. The server runs as a standalone process (listening on its own ip address/port).
 
 {% hint style="info" %}
-Because there is no message broker used for the websocket channel, it is currently not possible to horizontally scale the vantage6-server
+From version 3.2+ it is possible to horizontally scale the server (This upgrade is also made available to version 2.3.4)
+
+Documentation on how to deploy it will be shared here. Reach out to us on Discord for now.
+
+~~Because there is no message broker used for the websocket channel, it is currently not possible to horizontally scale the vantage6-server~~
 {% endhint %}
+
+~~~~
 
 There are many deployment options, so these examples are not complete and exhaustive.
 

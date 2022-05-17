@@ -24,6 +24,8 @@ In the next sections the different database models that are available are explai
 * [Tasks ](shell.md#tasks-and-results)--> `db.Task`
 * [Results ](shell.md#tasks-and-results)--> `db.Result`
 
+Every `db.` object has a `help()` method which prints some info on what data is stored in it (e.g. `db.Organization.help()`).
+
 ## Organizations
 
 {% hint style="info" %}
