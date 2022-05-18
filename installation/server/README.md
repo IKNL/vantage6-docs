@@ -14,7 +14,7 @@ pip install vantage6
 
 There are two optional components that you can set up apart from the vantage6-server itself.
 
-A docker registry can be used to store algorithms but it is also possible to use [Docker hub](https://hub.docker.com) for this. For instructions on how to install your own Docker registry see [docker-registry.md](docker-registry.md "mention").&#x20;
+A docker registry can be used to store algorithms but it is also possible to use [Docker hub](https://hub.docker.com/) for this. For instructions on how to install your own Docker registry see [docker-registry.md](docker-registry.md "mention").&#x20;
 
 If you want to enable algorithm containers that are running on different nodes, to directly communicate with one another, you require a VPN server. Refer to [eduvpn.md](eduvpn.md "mention") on how to install the VPN server.
 
