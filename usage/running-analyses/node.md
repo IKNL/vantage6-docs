@@ -3,7 +3,7 @@ description: In this section, you will learn how to use the client to register a
 ---
 # Registering a node
 
-Here, we assume that you have a Python session with an authenticated Client object, as created in [authentication](authentication.md).
+Here, we assume that you have a Python session with an authenticated Client object, as created in [authentication](authentication.md). We also assume that you have a login on the Vantage6 server that has the permissions to create a new node (regular end-users typically do not have these permissions, this is typically only for administrators).
 
 A node is assocated with both a collaboration and an organization (see [Concepts](../preliminaries.md#concepts)). You will need to find the collaboration and organization id's for the node you want to register:
 
