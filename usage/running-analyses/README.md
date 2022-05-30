@@ -54,6 +54,7 @@ You can use any language to interact with the API of the server as long as it is
 * [Creating an organization](organization.md)
 * [Creating a collaboration](collaboration.md)
 * [Registering a node](node.md)
+* [Creating a task](task.md)
 
 {% hint style="info" %}
 The R client is only suitable for creating tasks and retrieve their results. With the Python client it is possible to use the entire API.

@@ -30,6 +30,7 @@
   * [Creating an organization](usage/running-analyses/organization.md)
   * [Creating a collaboration](usage/running-analyses/collaboration.md)
   * [Registering a node](usage/running-analyses/node.md)
+  * [Creating a task](usage/running-analyses/task.md)
 * [Node](usage/running-the-node/README.md)
   * [Configure](usage/running-the-node/configuration.md)
   * [Security](usage/running-the-node/security.md)
