@@ -12,7 +12,7 @@ client.organization.list(fields=['id', 'name'])
 client.collaboration.list(fields=['id', 'name'])
 ```
 
-Then, we register a node with the desired organization and collaboration. In this example, we create a node for the organization with id 1 and collaboartion with id 1.
+Then, we register a node with the desired organization and collaboration. In this example, we create a node for the organization with id 1 and collaboration with id 1.
 
 ```python
 # A node is associated with both a collaboration and an organization
