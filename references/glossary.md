@@ -40,7 +40,7 @@ description: >-
 **P**
 
 * **Party**: an entity that takes part in one (or more) collaborations
-* **Python**:  a high-level general purpose programming language. It aims to help programmers write clear, logical code. vantage6 is [written in Python](https://github.com/IKNL/vantage6).
+* **Python**:  a high-level general purpose programming language. It aims to help programmers write clear, logical code. vantage6 is [written in Python](https://github.com/vantage6/vantage6).
 
 **S**
 

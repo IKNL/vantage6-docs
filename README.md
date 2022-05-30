@@ -13,7 +13,7 @@ It was accompanied by an oral presentation, which you can watch right here as we
 
 Vantage6 stands for pri**va**cy preservi**n**g [federa**t**ed le**a**rnin**g**](https://en.wikipedia.org/wiki/Federated\_learning) infrastructur**e** for **s**ecure **i**nsight e**x**change.
 
-The project is inspired by the [Personal Health Train](https://pht.health-ri.nl) (PHT) concept. In this analogy vantage6 is the _tracks_ and _stations._ Compatible algorithms are the _trains,_ and computation tasks are the _journey_.&#x20;
+The project is inspired by the [Personal Health Train](https://pht.health-ri.nl/) (PHT) concept. In this analogy vantage6 is the _tracks_ and _stations._ Compatible algorithms are the _trains,_ and computation tasks are the _journey_.&#x20;
 
 vantage6 is here for:
 
@@ -44,21 +44,28 @@ vantage6 is designed with three fundamental functional aspects of Federated lear
 
 **Source code**
 
+* [vantage6 ](https://github.com/vantage6/vantage6)-> contains all components (and the python-client).&#x20;
+
+{% hint style="warning" %}
+The old/previous (seperated) repositories can still be found at the IKNL Github in archived form:&#x20;
+
 * [vantage6-master](https://github.com/iknl/vantage6-mster) _-> contains all other repositories, used for synchronization and releasing_
 * [vantage6-node](https://github.com/iknl/vantage6-node) _-> node source code_
 * [vantage6-server](https://github.com/iknl/vantage6-server) _-> server source code_
 * [vantage6-client](https://github.com/iknl/vantage6-client) _-> (python) client source code_
 * [vantage6-common](https://github.com/iknl/vantage6-common) _-> common functionality_
+{% endhint %}
 
 **Community**
 
-* [Discourse](https://vantage6.discourse.group) -> discussion platform, ask anything here
+* [Discourse](https://vantage6.discourse.group/) -> discussion platform, ask anything here
 * [Discord](https://discord.gg/yAyFf6Y) -> for if you prefer a quick chat with the developers
 
 ## :mag: Contents
 
 This documentation space is intended for users of the vantage6 solution. You will find information on how to setup your own federated learning network, and how to maintain and interact with it.&#x20;
 
+* [Broken link](broken-reference "mention")
 * [Broken link](broken-reference "mention")
 * [Broken link](broken-reference "mention")
 * [Broken link](broken-reference "mention")
@@ -72,4 +79,4 @@ Here you will **not** find:
 
 Vantage6 is completely open source under the [Apache License](https://github.com/IKNL/vantage6/blob/master/LICENSE).
 
-We have monthly technical community meetings which can be joined by anyone interested. If you want to join, find us on our [Discord](https://discord.gg/yAyFf6Y) channel.
+If you want to join, find us on our [Discord](https://discord.gg/yAyFf6Y) channel.

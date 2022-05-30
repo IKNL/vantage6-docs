@@ -5,9 +5,9 @@
 ## Background <a href="#about-background" id="about-background"></a>
 
 * [Architecture](about-background/introduction.md)
-* [Partners](about-background/partners/README.md)
-  * [How to contribute](about-background/partners/how-to-contribute.md)
+* [Partners](about-background/partners.md)
 * [Release notes](about-background/release-notes.md)
+* [How to contribute](about-background/how-to-contribute.md)
 
 ## Install <a href="#installation" id="installation"></a>
 
